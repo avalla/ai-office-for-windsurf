@@ -30,14 +30,36 @@ Review changes across product, architecture, security, reliability, QA, and oper
    - Validate compliance with project standards
 
 3. **Move Tasks to DONE:**
+   - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/TASK_MANAGEMENT_RULES.md`)
+   - Add completion summary:
+   ```markdown
+   ## Completion Summary
+   **Status:** ✅ COMPLETED
+   **Completed:** YYYY-MM-DD
+   **Reviewer:** Multi-sector Review
+   ```
    - Use `task-management` skill to move approved tasks to DONE/
-   - Update task status with "Review completed and approved"
    - Record review results and approval details
 
 4. **Handle Review Issues:**
+   - **CRITICAL RULE:** Update task file BEFORE moving back
+   - Add status update: `- **YYYY-MM-DD:** Returned to WIP/REVIEW - Review feedback: [details]`
    - Move tasks with issues back to WIP/ or REVIEW/ as needed
    - Update assignment history if reassignment required
    - Document review feedback and required changes
+
+## 🚨 **TASK MANAGEMENT RULES ENFORCEMENT**
+**Reference:** `.windsurf/rules/TASK_MANAGEMENT_RULES.md`
+
+**REQUIRED FOR REVIEW → DONE:**
+- ✅ Completion summary with timestamp
+- ✅ Multi-sector reviewer identification
+- ✅ All acceptance criteria marked ✅
+
+**REQUIRED FOR REVIEW → WIP/REVIEW (Failed):**
+- ✅ Detailed review feedback
+- ✅ Specific improvement requirements
+- ✅ Status update with timestamp
 
 ## LOOP GUARD
 If FAIL:
