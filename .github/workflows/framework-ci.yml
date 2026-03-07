@@ -1,0 +1,118 @@
+name: Framework CI (Multi-project)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  framework-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Required framework files exist
+        run: |
+          test -d .windsurf/workflows
+          test -d .windsurf/rules
+          test -d .windsurf/templates
+          test -d projects/_skeleton
+
+      - name: Required workflows are not empty
+        run: |
+          files=(
+            ".windsurf/workflows/00_router.md"
+            ".windsurf/workflows/01_create_project.md"
+            ".windsurf/workflows/05_planner.md"
+            ".windsurf/workflows/10_ceo_prd.md"
+            ".windsurf/workflows/20_arch_adr.md"
+            ".windsurf/workflows/30_plan_tasks.md"
+            ".windsurf/workflows/40_dev_implement.md"
+            ".windsurf/workflows/50_qa_validate.md"
+            ".windsurf/workflows/60_review_merge.md"
+            ".windsurf/workflows/70_release.md"
+            ".windsurf/workflows/90_postmortem_memory.md"
+          )
+          for f in "${files[@]}"; do
+            test -s "$f" || (echo "Empty workflow: $f" && exit 1)
+          done
+
+      - name: Required templates are not empty
+        run: |
+          files=(
+            ".windsurf/templates/prd.md"
+            ".windsurf/templates/adr.md"
+            ".windsurf/templates/qa-checklist.md"
+            ".windsurf/templates/runbook-plan.md"
+            ".windsurf/templates/runbook-tasks.md"
+          )
+          for f in "${files[@]}"; do
+            test -s "$f" || (echo "Empty template: $f" && exit 1)
+          done
+
+      - name: Multi-sector review skill exists
+        run: |
+          test -s ".windsurf/skills/review-document-multisector.md" || (echo "Missing skill: review-document-multisector" && exit 1)
+
+      - name: Templates include mandatory multi-sector review section
+        run: |
+          files=(
+            ".windsurf/templates/prd.md"
+            ".windsurf/templates/adr.md"
+            ".windsurf/templates/runbook-plan.md"
+            ".windsurf/templates/runbook-tasks.md"
+            ".windsurf/templates/qa-checklist.md"
+          )
+          for f in "${files[@]}"; do
+            grep -Fq "## Multi-sector review (mandatory)" "$f" || (echo "Missing multi-sector section in: $f" && exit 1)
+          done
+
+      - name: Workflows enforce multi-sector review gate
+        run: |
+          files=(
+            ".windsurf/workflows/00_router.md"
+            ".windsurf/workflows/01_create_project.md"
+            ".windsurf/workflows/05_planner.md"
+            ".windsurf/workflows/10_ceo_prd.md"
+            ".windsurf/workflows/20_arch_adr.md"
+            ".windsurf/workflows/30_plan_tasks.md"
+            ".windsurf/workflows/40_dev_implement.md"
+            ".windsurf/workflows/50_qa_validate.md"
+            ".windsurf/workflows/60_review_merge.md"
+            ".windsurf/workflows/70_release.md"
+            ".windsurf/workflows/90_postmortem_memory.md"
+          )
+          for f in "${files[@]}"; do
+            grep -Fq "review-document-multisector" "$f" || (echo "Missing review gate in workflow: $f" && exit 1)
+          done
+
+      - name: Skills are not empty
+        run: |
+          for f in .windsurf/skills/*.md; do
+            test -s "$f" || (echo "Empty skill: $f" && exit 1)
+          done
+
+      - name: Project skeleton contains required dirs
+        run: |
+          test -d "projects/_skeleton/docs/prd"
+          test -d "projects/_skeleton/docs/adr"
+          test -d "projects/_skeleton/docs/qa"
+          test -d "projects/_skeleton/docs/runbooks"
+
+      - name: Multi-project status schema consistency
+        run: |
+          expected_state="state: router|create_project|prd|adr|plan|tasks|dev|qa|review|release|postmortem|blocked"
+          expected_owner="owner: router|create_project|planner|ceo_pm|architect|dev|qa|reviewer|release|ops"
+
+          grep -Fq 'Required keys in `projects/<project>/docs/runbooks/<slug>-status.md`:' docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq 'Required keys in `projects/<project>/docs/runbooks/<slug>-status.md`:' projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq "project: <project>" docs/runbooks/STATUS_TEMPLATE.md
+          grep -Fq "project: <project>" projects/_skeleton/docs/runbooks/STATUS_TEMPLATE.md
+          grep -Fq "## Multi-sector document review log (mandatory)" docs/runbooks/STATUS_TEMPLATE.md
+          grep -Fq "## Multi-sector document review log (mandatory)" projects/_skeleton/docs/runbooks/STATUS_TEMPLATE.md
+          grep -Fq 'Mandatory markdown section in every status artifact:' docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq 'Mandatory markdown section in every status artifact:' projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md
+
+          grep -Fq "$expected_state" docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq "$expected_state" projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq "$expected_owner" docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq "$expected_owner" projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md

@@ -1,0 +1,17 @@
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+
+# Ignore lock files (keep config.json)
+package-lock.json
+yarn.lock
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.iml
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
