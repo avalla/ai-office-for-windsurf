@@ -94,9 +94,33 @@ task-management validate --task=001-create-project-structure
 
 ## INTEGRATION
 - Used by workflows 40_dev_implement, 50_qa_validate, 60_review_merge
+- Integrates with `task-create` skill for new task creation
 - Integrates with review-document-multisector for assignment changes
 - Updates project status files with task movement evidence
 - Provides audit trail for task transitions
+
+## QUICK COMMANDS
+
+### Create New Task
+```bash
+# Use task-create skill
+task-create --project=<project> --title="<title>" --team=<team>
+```
+
+### Full Task Lifecycle
+```bash
+# 1. Create
+task-create --project=myproject --title="New feature" --team=dev
+
+# 2. Start work
+task-management move --task=FEAT-001 --to=WIP --reason="starting"
+
+# 3. Complete
+task-management move --task=FEAT-001 --to=REVIEW --reason="ready for review"
+
+# 4. Approve
+task-management move --task=FEAT-001 --to=DONE --reason="approved"
+```
 
 ## ERROR HANDLING
 - Invalid transitions: report error and suggest valid targets
