@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Reliability Rule (Multi-project)
 
 ## Loop guards

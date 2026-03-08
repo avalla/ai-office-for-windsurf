@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # AI Office Task Management Rules
 
 **Purpose:** Cascade rules for proper task state transitions in AI Office framework projects.
@@ -8,7 +12,7 @@
 
 ### **When State Changes Occur:**
 - **TODO → WIP**: When implementation begins
-- **WIP → REVIEW**: When all acceptance criteria completed  
+- **WIP → REVIEW**: When all acceptance criteria completed
 - **REVIEW → DONE**: After multi-sector approval
 - **REVIEW → WIP**: When QA/review finds issues
 
@@ -32,7 +36,7 @@
 - **YYYY-MM-DD:** Moved to WIP - Started implementation
 ```
 
-### **WIP → REVIEW** 
+### **WIP → REVIEW**
 ```markdown
 ## Status Updates
 - **YYYY-MM-DD:** Moved to REVIEW - Ready for QA validation
@@ -57,10 +61,10 @@
 
 ## 🚨 **Anti-Patterns to Avoid**
 
-❌ **"I'll move it later"** → Move IMMEDIATELY when state changes  
-❌ **"It's obvious it's done"** → Explicit completion summary required  
-❌ **"I'll update after"** → File updates BEFORE move  
-❌ **"README can wait"** → Update counts immediately  
+❌ **"I'll move it later"** → Move IMMEDIATELY when state changes
+❌ **"It's obvious it's done"** → Explicit completion summary required
+❌ **"I'll update after"** → File updates BEFORE move
+❌ **"README can wait"** → Update counts immediately
 
 ## ✅ **Quality Gates**
 
