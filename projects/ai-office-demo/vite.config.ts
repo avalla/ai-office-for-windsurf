@@ -21,12 +21,7 @@ export default defineConfig({
       },
     },
     sourcemap: true,
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
+    minify: 'esbuild',
   },
   server: {
     port: 3000,

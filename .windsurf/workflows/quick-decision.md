@@ -18,38 +18,38 @@ Any user request that could be either:
 
 2) **Present Choice to User**:
    ```
-   Ho ricevuto la tua richiesta: [brief description]
-   
-   Posso procedere in due modi:
-   
-   🚀 **Modifica Diretta**: Eseguo subito la modifica senza creare task formali
-      - Veloce e immediato
-      - Nessuna documentazione task
-      - Adatto per fix semplici o modifiche minori
-   
-   📋 **Task Formale**: Creo un task documentato con tracking completo
-      - Documentazione formale
-      - Tracking stato avanzamento  
-      - Adatto per complessi o lavoro importante
-   
-   Come preferisci procedere?
+   I received your request: [brief description]
+
+   I can proceed in two ways:
+
+   🚀 **Direct Modification**: I make the change immediately without creating formal tasks
+      - Fast and immediate
+      - No formal task documentation
+      - Suitable for simple fixes or minor changes
+
+   📋 **Formal Task**: I create a documented task with full tracking
+      - Formal documentation
+      - Progress tracking
+      - Suitable for complex or high-impact work
+
+   How would you like to proceed?
    ```
 
 3) **Route Based on Choice**:
-   - **Modifica Diretta**: Execute immediately using available tools
-   - **Task Formale**: Route to `00_router` for formal task creation
+   - **Direct Modification**: Execute immediately using available tools
+   - **Formal Task**: Route to `00_router` for formal task creation
 
 ## EXAMPLES
 
 **Quick Direct Actions**:
-- "disabilita indicizzazione motori di ricerca" → Modifica Diretta
-- "fix dark mode bug" → Modifica Diretta  
-- "aggiungi meta tag" → Modifica Diretta
+- "disable search engine indexing" → Direct Modification
+- "fix dark mode bug" → Direct Modification
+- "add meta tag" → Direct Modification
 
 **Formal Tasks**:
-- "implementa sistema di autenticazione completo" → Task Formale
-- "ricerca e analisi comparativa export culturali" → Task Formale
-- "sviluppa nuovo framework teorico" → Task Formale
+- "implement a full authentication system" → Formal Task
+- "research and comparative analysis of cultural exports" → Formal Task
+- "develop a new theoretical framework" → Formal Task
 
 ## IMPLEMENTATION NOTES
 - Always ask user preference before proceeding

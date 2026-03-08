@@ -32,7 +32,7 @@ Before completion, re-verify and improve the QA test plan through multi-sector r
    - Document any issues or blockers found
 
 3. **Move Tasks to REVIEW:**
-   - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/TASK_MANAGEMENT_RULES.md`)
+   - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/task-management.md`)
    - Add status update: `- **YYYY-MM-DD:** Moved to REVIEW - Ready for QA validation`
    - Add: `- **YYYY-MM-DD:** All acceptance criteria completed ✅`
    - Use `task-management` skill to move passed tasks to REVIEW/
@@ -46,7 +46,7 @@ Before completion, re-verify and improve the QA test plan through multi-sector r
    - Document failure reasons and next steps
 
 ## 🚨 **TASK MANAGEMENT RULES ENFORCEMENT**
-**Reference:** `.windsurf/rules/TASK_MANAGEMENT_RULES.md`
+**Reference:** `.windsurf/rules/task-management.md`
 
 **REQUIRED FOR WIP → REVIEW:**
 - ✅ All acceptance criteria marked ✅

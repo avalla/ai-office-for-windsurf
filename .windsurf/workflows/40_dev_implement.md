@@ -27,7 +27,7 @@ Any status updates produced in this workflow must be re-verified through multi-s
    - Check for assignment loops in task history
 
 2. **Move Tasks to WIP:**
-   - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/TASK_MANAGEMENT_RULES.md`)
+   - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/task-management.md`)
    - Add status update: `- **YYYY-MM-DD:** Moved to WIP - Started implementation`
    - Use `task-management` skill to move assigned tasks to WIP/
    - Record assignment change if different from previous assignee
@@ -43,7 +43,7 @@ Any status updates produced in this workflow must be re-verified through multi-s
    - Notify if blocking other tasks
 
 ## 🚨 **TASK MANAGEMENT RULES ENFORCEMENT**
-**Reference:** `.windsurf/rules/TASK_MANAGEMENT_RULES.md`
+**Reference:** `.windsurf/rules/task-management.md`
 
 **REQUIRED BEFORE ANY MOVE:**
 - ✅ Update task file with timestamp and reason

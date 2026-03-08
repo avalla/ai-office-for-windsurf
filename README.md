@@ -90,7 +90,7 @@ Each project under `projects/<project>/` has its own:
 | **50_qa_validate** | QA | Quality assurance | Test results |
 | **60_review_merge** | Reviewer | Code review | Approval |
 | **70_release** | Release | Release preparation | Changelog |
-| **90_postmortem** | Ops | Learning & improvements | Postmortem |
+| **90_postmortem_memory** | Ops | Learning & improvements | Postmortem |
 
 ## 📚 Documentation
 

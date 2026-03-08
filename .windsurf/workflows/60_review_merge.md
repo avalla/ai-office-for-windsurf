@@ -30,7 +30,7 @@ Review changes across product, architecture, security, reliability, QA, and oper
    - Validate compliance with project standards
 
 3. **Move Tasks to DONE:**
-   - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/TASK_MANAGEMENT_RULES.md`)
+   - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/task-management.md`)
    - Add completion summary:
    ```markdown
    ## Completion Summary
@@ -49,7 +49,7 @@ Review changes across product, architecture, security, reliability, QA, and oper
    - Document review feedback and required changes
 
 ## 🚨 **TASK MANAGEMENT RULES ENFORCEMENT**
-**Reference:** `.windsurf/rules/TASK_MANAGEMENT_RULES.md`
+**Reference:** `.windsurf/rules/task-management.md`
 
 **REQUIRED FOR REVIEW → DONE:**
 - ✅ Completion summary with timestamp
