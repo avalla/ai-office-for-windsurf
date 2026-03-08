@@ -56,6 +56,12 @@ Each project under `projects/<project>/` has its own:
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+- **Windsurf IDE** installed and configured
+- **Cascade AI** enabled in Windsurf
+- Repository cloned and up to date
+
 ### Quick Start
 
 1. **Create New Project**
@@ -68,7 +74,7 @@ Each project under `projects/<project>/` has its own:
    ```
 
 2. **Start Workflow**
-   - Run workflow: `00_router`
+   - Invoke workflow via slash command: `/00_router`
    - The system will orchestrate the entire pipeline
 
 3. **Follow the Pipeline**
@@ -82,6 +88,7 @@ Each project under `projects/<project>/` has its own:
 |-------|------|---------|--------|
 | **00_router** | Router | Project routing & initialization | Status file |
 | **01_create_project** | PM | Project setup & core artifacts | PRD, ADR, Plan |
+| **01_import_project** | PM | Import existing project into framework | Config, ADR |
 | **10_ceo_prd** | CEO | Product requirements | PRD |
 | **20_arch_adr** | Architect | Technical decisions | ADR |
 | **05_planner** | Planner | Macro planning | Plan |
@@ -113,14 +120,6 @@ Each project under `projects/<project>/` has its own:
 | **Decision History** | Framework evolution | `docs/decision-log.md` |
 
 ## 🎯 Demo Projects
-
-### 🏢 marketplace-lite
-- **Status**: ✅ Complete (postmortem finished)
-- **Location**: `projects/marketplace-lite/`
-- **Key Files**:
-  - Status: `docs/runbooks/feature-listings-bids-mvp-status.md`
-  - Plan: `docs/runbooks/feature-listings-bids-mvp-plan.md`
-  - Tasks: `docs/runbooks/feature-listings-bids-mvp-tasks.md`
 
 ### 🌐 ai-office-demo
 - **Status**: ✅ Complete (full cycle executed)
