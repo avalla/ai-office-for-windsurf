@@ -30,6 +30,8 @@ Create a new project from skeleton, ask user for missing details, initialize all
 
 3) Create project folder:
    - If `projects/<project>/` does not exist, copy from `projects/_skeleton/`.
+   - **Create task directories**: `projects/<project>/.ai-agency/tasks/TODO/`, `WIP/`, `REVIEW/`, `DONE/`, `ARCHIVED/`
+   - Create `projects/<project>/.ai-agency/tasks/README.md` with task count template
    - If it exists, ask: "Project already exists. Continue with existing project or choose a different name?"
 
 4) Determine initial slug:
