@@ -11,6 +11,7 @@ Before completion, re-verify and improve the QA test plan through multi-sector r
 - `projects/<project>/docs/runbooks/<slug>-status.md`
 - Tasks in WIP/ ready for QA validation
 - Implementation evidence from dev workflow
+- Optional: Security pentest report from `45_security_pentest` workflow
 
 ## OUTPUTS (must)
 - `projects/<project>/docs/qa/<slug>-testplan.md`
@@ -21,29 +22,39 @@ Before completion, re-verify and improve the QA test plan through multi-sector r
 - Task files updated with QA results
 
 ## TASK MANAGEMENT STEPS
-1. **Review WIP Tasks:**
+1. **Security Check (Optional):**
+   - Check if security pentest report exists from `45_security_pentest`
+   - Review any CRITICAL or HIGH security findings
+   - If security blockers exist, coordinate with security team
+   - Document security clearance status in QA plan
+
+2. **Review WIP Tasks:**
    - Check tasks/WIP/ for tasks ready for QA
    - Validate all acceptance criteria are completed
    - Check implementation evidence exists
+   - Verify security requirements are met if applicable
 
-2. **QA Validation:**
+3. **QA Validation:**
    - Execute test plan against each task
    - Record PASS/FAIL results in task files
    - Document any issues or blockers found
+   - Include security test results if pentest was performed
 
-3. **Move Tasks to REVIEW:**
+4. **Move Tasks to REVIEW:**
    - **CRITICAL RULE:** Update task file BEFORE moving (see `.windsurf/rules/task-management.md`)
    - Add status update: `- **YYYY-MM-DD:** Moved to REVIEW - Ready for QA validation`
    - Add: `- **YYYY-MM-DD:** All acceptance criteria completed ✅`
+   - Include security clearance status if applicable
    - Use `task-management` skill to move passed tasks to REVIEW/
    - Record QA results and any required fixes
 
-4. **Handle Failed Tasks:**
+5. **Handle Failed Tasks:**
    - **CRITICAL RULE:** Update task file BEFORE moving back to WIP
    - Add status update: `- **YYYY-MM-DD:** Returned to WIP - Review feedback: [details]`
    - Move failed tasks back to WIP/ with feedback
    - Update assignment history if reassignment needed
    - Document failure reasons and next steps
+   - Include security-related failures if applicable
 
 ## 🚨 **TASK MANAGEMENT RULES ENFORCEMENT**
 **Reference:** `.windsurf/rules/task-management.md`
@@ -52,26 +63,32 @@ Before completion, re-verify and improve the QA test plan through multi-sector r
 - ✅ All acceptance criteria marked ✅
 - ✅ Status update with timestamp
 - ✅ QA results recorded
+- ✅ Security clearance verified (if pentest performed)
 
 **REQUIRED FOR REVIEW → WIP (Failed):**
 - ✅ Detailed failure reasons
 - ✅ Specific feedback for fixes
 - ✅ Status update with timestamp
+- ✅ Security-related issues documented (if applicable)
 
 ## LOOP GUARD
-If FAIL:
+If FAIL (including security failures):
 - increment `qa_iteration` by 1 in status
 - if `qa_iteration` > 2 → set `state: blocked`, `owner: planner`, set `blocked_reason`, then `05_planner`
-- else route to `40_dev_implement`
+- else route to `40_dev_implement` (or `45_security_pentest` for security issues)
 
 If PASS:
 - Move tasks to REVIEW/ state
 - route to `60_review_merge`
 
 ## CHECKLIST
+- [ ] Security pentest report reviewed (if exists)
 - [ ] All WIP tasks reviewed for QA readiness
+- [ ] Security clearance verified (if applicable)
 - [ ] Test plan executed and results recorded
+- [ ] Security test results included (if pentest performed)
 - [ ] Passed tasks moved to REVIEW/
 - [ ] Failed tasks returned to WIP/ with feedback
 - [ ] Assignment history updated for reassignments
 - [ ] Status file updated with QA evidence
+- [ ] Security findings documented (if any)

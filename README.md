@@ -87,6 +87,7 @@ Each project under `projects/<project>/` has its own:
 | **05_planner** | Planner | Macro planning | Plan |
 | **30_plan_tasks** | Planner | Task breakdown | Tasks |
 | **40_dev_implement** | Developer | Implementation | Code |
+| **45_security_pentest** | Security | Security assessment | Pentest report |
 | **50_qa_validate** | QA | Quality assurance | Test results |
 | **60_review_merge** | Reviewer | Code review | Approval |
 | **70_release** | Release | Release preparation | Changelog |
@@ -170,9 +171,12 @@ Each project under `projects/<project>/` has its own:
 ## 🔒 Security & Compliance
 
 ### 🛡️ Security Features
-- **Security Reviews**: Dedicated security assessment in every workflow
+- **Security Reviews**: Dedicated security assessment workflow (`45_security_pentest`)
+- **Penetration Testing**: Comprehensive security testing and vulnerability assessment
+- **OWASP Compliance**: Testing against OWASP Top 10 security risks
+- **Dependency Scanning**: Automated vulnerability detection with Snyk
+- **Security Reporting**: Detailed vulnerability reports with remediation guidance
 - **Supabase Helpers**: SQL security patterns and RLS policies
-- **Dependency Scanning**: Automated vulnerability detection
 - **Secure Templates**: Security-conscious code and documentation templates
 
 ### 📋 Compliance

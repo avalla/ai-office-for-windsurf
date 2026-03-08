@@ -18,7 +18,7 @@ Any status updates produced in this workflow must be re-verified through multi-s
 - `review-document-multisector` executed on updated status sections and log updated
 - Tasks moved from TODO/ to WIP/ with assignment tracking
 - Task assignment history updated to prevent loops
-- next: `50_qa_validate`
+- next: `45_security_pentest` (if security required) or `50_qa_validate`
 
 ## TASK MANAGEMENT STEPS
 1. **Review Assigned Tasks:**
@@ -62,3 +62,5 @@ Any status updates produced in this workflow must be re-verified through multi-s
 - [ ] Task dependencies validated
 - [ ] Status file updated with task movement evidence
 - [ ] Multi-sector review completed
+- [ ] Security requirements assessed (if applicable)
+- [ ] Routing decision made: security testing vs direct to QA
