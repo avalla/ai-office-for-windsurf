@@ -8,7 +8,7 @@ export function Hero() {
           <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:text-6xl">
             AI Office for{" "}
             <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-              Windsurf
+              Antigravity
             </span>
           </h1>
           <p className="mx-auto max-w-[700px] text-muted-foreground sm:text-xl">

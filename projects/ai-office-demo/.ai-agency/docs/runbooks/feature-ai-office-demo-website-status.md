@@ -11,7 +11,7 @@ created_at: 2025-03-07
 updated_at: 2025-03-07
 
 ## Request summary
-- Create demo website for AI Office for Windsurf
+- Create demo website for AI Office for Antigravity
 - Technology stack: Vite + React + shadcn/ui
 - Requirements: Fast, secure, beautiful
 - Purpose: Main project demonstration website

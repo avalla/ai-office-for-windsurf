@@ -4,16 +4,16 @@ Owner: CEO/PM
 Date: 2025-03-07
 
 ## Goal
-Create a beautiful, fast, and secure demo website for AI Office for Windsurf that showcases the product's capabilities, attracts users, and serves as the primary public interface for the project.
+Create a beautiful, fast, and secure demo website for AI Office for Antigravity that showcases the product's capabilities, attracts users, and serves as the primary public interface for the project.
 
 ## Users / Personas
-- **Visitors/Prospective Users**: People discovering AI Office for Windsurf who want to understand what it does and how it can help them
+- **Visitors/Prospective Users**: People discovering AI Office for Antigravity who want to understand what it does and how it can help them
 - **Developers/Technical Users**: Developers interested in the technical capabilities, architecture, and implementation details
-- **Business Decision Makers**: Managers and leaders evaluating AI Office for Windsurf for their teams
+- **Business Decision Makers**: Managers and leaders evaluating AI Office for Antigravity for their teams
 - **Contributors**: Open source contributors who want to understand the project and get involved
 
 ## User Stories
-- As a **visitor**, I want to quickly understand what AI Office for Windsurf does, so that I can decide if it's relevant to my needs
+- As a **visitor**, I want to quickly understand what AI Office for Antigravity does, so that I can decide if it's relevant to my needs
 - As a **developer**, I want to see the technical features and capabilities, so that I can evaluate if it fits my technical requirements
 - As a **potential user**, I want to see clear getting-started instructions, so that I can try the product myself
 - As a **business decision maker**, I want to understand the value proposition and use cases, so that I can make an informed decision
@@ -21,7 +21,7 @@ Create a beautiful, fast, and secure demo website for AI Office for Windsurf tha
 
 ## Acceptance Criteria
 - [ ] **Homepage Hero Section**: Compelling headline, clear value proposition, and prominent call-to-action
-- [ ] **Features Showcase**: Interactive demonstration of key AI Office for Windsurf capabilities
+- [ ] **Features Showcase**: Interactive demonstration of key AI Office for Antigravity capabilities
 - [ ] **Technical Documentation**: Clear explanation of architecture, technologies used, and integration options
 - [ ] **Getting Started Guide**: Step-by-step instructions for trying/installing the product
 - [ ] **Responsive Design**: Fully functional and visually appealing on mobile, tablet, and desktop

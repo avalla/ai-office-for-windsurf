@@ -8,12 +8,12 @@ Scope: framework modules only (not application runtime internals).
 
 | Module | Path | Responsibility | Inputs | Outputs |
 |---|---|---|---|---|
-| Workflow Orchestration | `.windsurf/workflows/` | Defines role handoff and state transitions | User request + current status state | Updated artifact state and next owner |
-| Execution Skills | `.windsurf/skills/` | Reusable implementation playbooks for specific tasks | Workflow context + role objective | Procedural guidance and quality checks |
-| Multi-sector Document Review | `.windsurf/skills/review-document-multisector.md` | Re-verifies every written artifact across product/architecture/security/reliability/QA/ops | Draft artifact + workflow context | Improved artifact + PASS/FAIL review evidence |
-| Behavioral Rules | `.windsurf/rules/` | Repository-specific constraints and precedence | Agent actions + proposed changes | Allowed scope and guardrails |
-| Global Policies | `.windsurf/policies/` | Cross-cutting engineering constraints (coding/security/testing) | Any implementation or review activity | Compliance requirements |
-| Templates | `.windsurf/templates/` | Canonical artifact structures for repeatable execution | New project/feature setup | Standardized PRD/ADR/QA/Runbook artifacts |
+| Workflow Orchestration | `.agents/workflows/` | Defines role handoff and state transitions | User request + current status state | Updated artifact state and next owner |
+| Execution Skills | `.agents/skills/` | Reusable implementation playbooks for specific tasks | Workflow context + role objective | Procedural guidance and quality checks |
+| Multi-sector Document Review | `.agents/skills/review-document-multisector.md` | Re-verifies every written artifact across product/architecture/security/reliability/QA/ops | Draft artifact + workflow context | Improved artifact + PASS/FAIL review evidence |
+| Behavioral Rules | `.agents/rules/` | Repository-specific constraints and precedence | Agent actions + proposed changes | Allowed scope and guardrails |
+| Global Policies | `.agents/policies/` | Cross-cutting engineering constraints (coding/security/testing) | Any implementation or review activity | Compliance requirements |
+| Templates | `.agents/templates/` | Canonical artifact structures for repeatable execution | New project/feature setup | Standardized PRD/ADR/QA/Runbook artifacts |
 | Framework Docs | `docs/` | Global process documentation and decisions | Cycle outcomes + framework updates | Decision log, roadmap, onboarding guidance |
 | Project Skeleton | `projects/_skeleton/` | Bootstrap structure for new projects | New project initialization | Ready-to-fill project directory structure |
 | Project Instances | `projects/<project>/` | Project-scoped execution artifacts and knowledge | Planned feature work | PRD/ADR/Plan/Tasks/Status/QA artifacts |

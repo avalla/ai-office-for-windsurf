@@ -6,7 +6,7 @@
 **Estimated Hours:** 1.5
 
 ## Description
-Create interactive demo of AI Office for Windsurf capabilities
+Create interactive demo of AI Office for Antigravity capabilities
 
 ## Files
 - `src/components/FeaturesShowcase.tsx` - Features showcase container

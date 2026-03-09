@@ -6,7 +6,7 @@ This document visualizes the framework structure and orchestration model in mult
 
 ```text
 .
-├── .windsurf/
+├── .agents/
 │   ├── workflows/   # role orchestration and state transitions
 │   ├── skills/      # reusable execution playbooks
 │   ├── rules/       # behavioral constraints and precedence

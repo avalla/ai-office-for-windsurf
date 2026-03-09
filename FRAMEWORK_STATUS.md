@@ -10,14 +10,14 @@
 ```mermaid
 graph TB
     subgraph "Root Level"
-        W[.windsurf/]
+        W[.agents/]
         D[docs/]
         A[architecture/]
         P[projects/]
         O[office/]
     end
     
-    subgraph ".windsurf/"
+    subgraph ".agents/"
         W1[workflows/]
         W2[skills/]
         W3[rules/]
