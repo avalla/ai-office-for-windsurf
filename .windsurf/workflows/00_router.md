@@ -15,6 +15,7 @@ Every status artifact created/updated by router must include a multi-sector revi
 - `review-document-multisector` applied to the status artifact and logged
 - state set to `router`
 - next workflow selected
+- `FRAMEWORK_STATUS.md` updated with new project entry (if new project)
 
 ## STEPS
 1) **Quick Decision Check**:
@@ -49,7 +50,11 @@ Every status artifact created/updated by router must include a multi-sector revi
 8) Run `review-document-multisector` on the status artifact and record result in
    `## Multi-sector document review log (mandatory)`.
 
-9) Route (enterprise feature path):
+9) **Update Framework Status**:
+   - If new project created, add entry to `FRAMEWORK_STATUS.md` Project Details table
+   - Update the Update Log with current date and action
+
+10) Route (enterprise feature path):
    - import → `01_import_project` → (dynamic routing based on project maturity)
    - feature → `10_ceo_prd` → `20_arch_adr` → `05_planner` → `30_plan_tasks`
    - bugfix/refactor/spike → `05_planner` → `30_plan_tasks`
