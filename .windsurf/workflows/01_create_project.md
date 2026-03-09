@@ -18,7 +18,7 @@ multi-sector review baseline.
 - `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md` created (may be placeholder)
 - `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md` created and initialized
 - `projects/<project>/.ai-agency/docs/qa/<slug>-testplan.md` created (may be placeholder)
-- all created artifacts include `## Multi-sector review (mandatory)` and initial reviewer notes
+- all created artifacts include the mandatory review section (`## Multi-sector review (mandatory)` for PRD/ADR/plan/tasks/QA, and `## Multi-sector document review log (mandatory)` for status)
 - status: `state: create_project`, `owner: create_project`
 - next: `10_ceo_prd` (to start the feature workflow)
 

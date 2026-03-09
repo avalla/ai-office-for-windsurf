@@ -82,4 +82,4 @@ Simply say "I want to create a new project [name]" or use this slash command. Th
 - Never create project folders manually
 - Always follow the workflow state machine
 - All artifacts must be created through workflows
-- Every written/updated artifact must include `## Multi-sector review (mandatory)`
+- Every written/updated artifact must include the required review section (`## Multi-sector review (mandatory)` for PRD/ADR/plan/tasks/QA, and `## Multi-sector document review log (mandatory)` for status files)

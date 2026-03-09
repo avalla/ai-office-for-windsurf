@@ -23,10 +23,10 @@ Every status artifact created/updated by router must include a multi-sector revi
 ## STEPS
 
 1) **Quick Decision Check**:
-    - First route to `quick-decision` workflow
-    - Let user choose between "Modifica Diretta" vs "Task Formale"
-    - If user chooses "Task Formale" → continue with step 2
-    - If user chooses "Modifica Diretta" → execute immediately, skip formal workflow
+    - Invoke `quick-decision` once for the current request (unless a decision is already captured).
+    - Let the user choose between "Direct Modification" vs "Formal Task".
+    - If the user chooses "Formal Task" → continue with step 2 in the same `00_router` execution.
+    - If the user chooses "Direct Modification" → execute immediately and exit the formal workflow.
 
 2) **For Formal Tasks Only**:
    Determine request type:

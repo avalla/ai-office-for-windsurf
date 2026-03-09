@@ -25,12 +25,19 @@ jobs:
             ".windsurf/workflows/05_planner.md"
             ".windsurf/workflows/10_ceo_prd.md"
             ".windsurf/workflows/20_arch_adr.md"
+            ".windsurf/workflows/22_ux_research.md"
+            ".windsurf/workflows/25_design_ui.md"
+            ".windsurf/workflows/26_audio_create.md"
+            ".windsurf/workflows/27_video_create.md"
+            ".windsurf/workflows/28_game_create.md"
+            ".windsurf/workflows/29_image_create.md"
             ".windsurf/workflows/30_plan_tasks.md"
             ".windsurf/workflows/40_dev_implement.md"
             ".windsurf/workflows/50_qa_validate.md"
             ".windsurf/workflows/60_review_merge.md"
             ".windsurf/workflows/70_release.md"
             ".windsurf/workflows/90_postmortem_memory.md"
+            ".windsurf/workflows/develop-feature.md"
           )
           for f in "${files[@]}"; do
             test -s "$f" || (echo "Empty workflow: $f" && exit 1)
@@ -74,12 +81,19 @@ jobs:
             ".windsurf/workflows/05_planner.md"
             ".windsurf/workflows/10_ceo_prd.md"
             ".windsurf/workflows/20_arch_adr.md"
+            ".windsurf/workflows/22_ux_research.md"
+            ".windsurf/workflows/25_design_ui.md"
+            ".windsurf/workflows/26_audio_create.md"
+            ".windsurf/workflows/27_video_create.md"
+            ".windsurf/workflows/28_game_create.md"
+            ".windsurf/workflows/29_image_create.md"
             ".windsurf/workflows/30_plan_tasks.md"
             ".windsurf/workflows/40_dev_implement.md"
             ".windsurf/workflows/50_qa_validate.md"
             ".windsurf/workflows/60_review_merge.md"
             ".windsurf/workflows/70_release.md"
             ".windsurf/workflows/90_postmortem_memory.md"
+            ".windsurf/workflows/develop-feature.md"
           )
           for f in "${files[@]}"; do
             grep -Fq "review-document-multisector" "$f" || (echo "Missing review gate in workflow: $f" && exit 1)
@@ -100,8 +114,8 @@ jobs:
 
       - name: Multi-project status schema consistency
         run: |
-          expected_state="state: router|create_project|prd|adr|plan|tasks|dev|qa|review|release|postmortem|blocked"
-          expected_owner="owner: router|create_project|planner|ceo_pm|architect|dev|qa|reviewer|release|ops"
+          expected_state="state: router|create_project|prd|adr|plan|tasks|ux_research|design_ui|dev|audio_create|video_create|image_create|game_create|security|qa|review|release|postmortem|blocked"
+          expected_owner="owner: router|create_project|planner|ceo_pm|architect|ux_researcher|designer|dev|audio_creator|video_creator|image_creator|game_developer|security|qa|reviewer|release|ops"
 
           grep -Fq 'Required keys in `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:' docs/runbooks/STATUS_SCHEMA.md
           grep -Fq 'Required keys in `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:' projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md

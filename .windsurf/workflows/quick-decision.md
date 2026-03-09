@@ -37,7 +37,7 @@ Any user request that could be either:
 
 3) **Route Based on Choice**:
    - **Direct Modification**: Execute immediately using available tools
-   - **Formal Task**: Route to `00_router` for formal task creation
+   - **Formal Task**: Return control to the active `00_router` execution and continue formal routing from step 2
 
 ## EXAMPLES
 

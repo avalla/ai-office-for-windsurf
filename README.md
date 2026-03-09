@@ -54,7 +54,7 @@ ai-office-windsurf/
 
 The agency is configured in `.windsurf/office-config.md` with:
 
-- **Agent Roster:** 10 specialized agents (CEO, PM, Architect, Developer, Security, QA, Reviewer, Planner, Release Manager, Ops)
+- **Agent Roster:** 21 specialized agents across orchestration, executive, design, creative, technical, quality, and operations layers
 - **Communication Protocols:** Inter-agent communication, meeting cadence
 - **Decision Authority Matrix:** Who decides what
 - **Operational Parameters:** Quality thresholds, iteration limits
