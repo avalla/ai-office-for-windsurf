@@ -3,10 +3,10 @@
 
 > A comprehensive **AI Software Company framework** designed specifically for Windsurf IDE, enabling systematic project development with multi-role workflows and enterprise-grade quality assurance.
 
-[![Framework Status](https://img.shields.io/badge/Status-Production%20Ready-green)](https://github.com/ai-office-windsurf)
-[![Version](https://img.shields.io/badge/Version-3.1-blue)](https://github.com/ai-office-windsurf/releases)
+![Framework Status](https://img.shields.io/badge/Status-Production%20Ready-green)
+![Version](https://img.shields.io/badge/Version-3.1-blue)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)
-[![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)](https://windsurf.ai-office.com)
+![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)
 
 ## 🌟 Overview
 
@@ -236,8 +236,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **🤖 Built by the AI Office Team**
 
-[![AI Office](https://img.shields.io/badge/AI%20Office-Powered%20by%20AI-blue)](https://ai-office.com)
-[![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)](https://windsurf.ai-office.com)
+![AI Office](https://img.shields.io/badge/AI%20Office-Powered%20by%20AI-blue)
+![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)
 
 **Transforming software development with AI-driven workflows**
 

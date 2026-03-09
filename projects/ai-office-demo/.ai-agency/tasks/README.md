@@ -2,6 +2,13 @@
 
 Kanban-style task management for the project.
 
+## Task Counts
+
+- **TODO:** 17
+- **WIP:** 0
+- **REVIEW:** 0
+- **DONE:** 0
+
 ## Task States
 
 - **TODO** - Tasks ready to be started
