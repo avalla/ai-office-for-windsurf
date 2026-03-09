@@ -10,18 +10,33 @@ Import existing project into .ai-agency framework while preserving existing work
 - Path to existing project directory
 - Optional: custom project name
 - Optional: team mapping configuration
+- **User choice**: Copy to `projects/<slug>/` OR import in-place
 
 ## OUTPUTS (must)
-- `.ai-agency/` folder structure created in existing project
+- **If copy mode**: Project copied to `projects/<slug>/` with `.ai-agency/` structure
+- **If in-place mode**: `.ai-agency/` folder created in existing project directory
 - Project analysis report generated
 - Existing tasks imported and categorized
 - Core framework artifacts initialized from existing content
 - Team mapping established
 - `review-document-multisector` executed on all created artifacts
 - Status file created with import evidence
+- `FRAMEWORK_STATUS.md` updated with new project entry
 - next: `10_ceo_prd` (for PRD review) or directly to appropriate workflow based on project maturity
 
 ## IMPORT STEPS
+
+### 0. Choose Import Mode
+- Ask user: "Do you want to copy the project into the framework's `projects/<slug>/` folder or import it in-place?"
+- **Copy to `projects/<slug>/`**:
+  - Creates a clean copy under framework control
+  - Recommended for new imports
+  - Preserves original project location
+- **Import in-place**:
+  - Creates `.ai-agency/` in the existing directory
+  - Preserves git history and remotes
+  - Useful for projects already in separate repos
+- Default recommendation: Copy to `projects/<slug>/`
 
 ### 1. Project Analysis
 - Scan existing project structure and files
@@ -31,8 +46,19 @@ Import existing project into .ai-agency framework while preserving existing work
 - Map git history to team activity patterns
 
 ### 2. Create Framework Structure
-- Initialize `.ai-agency/` folder with all subdirectories
-- Copy skeleton configuration files
+
+**If copy mode:**
+- Create `projects/<slug>/` directory
+- Copy entire project to new location
+- Initialize `.ai-agency/` folder with all subdirectories in the copy
+- Preserve original project unchanged
+
+**If in-place mode:**
+- Initialize `.ai-agency/` folder with all subdirectories in existing location
+- No files moved outside `.ai-agency/`
+
+**Both modes:**
+- Copy skeleton configuration files to `.ai-agency/`
 - Update config.json with detected project information
 - Create initial README.md with import summary
 
