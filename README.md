@@ -33,7 +33,12 @@ ai-office-windsurf/
 │   ├── 📁 workflows/               # Workflow definitions
 │   ├── 📁 skills/                  # Reusable AI skills
 │   ├── 📁 rules/                   # Framework rules and constraints
-│   └── 📁 templates/               # Document and code templates
+│   ├── 📁 templates/               # Document and code templates
+│   └── 📄 office-config.md         # Agency configuration (agents, roles)
+├── 📁 office/                       # Agency operations
+│   ├── 📁 clients/                 # Client profiles
+│   ├── 📁 meetings/                # Virtual meeting archives
+│   └── 📁 reports/                 # Generated reports
 ├── 📁 docs/                        # Framework documentation
 │   ├── 📁 architecture/            # System architecture docs
 │   ├── 📁 memory/                  # Learning and patterns
@@ -44,6 +49,16 @@ ai-office-windsurf/
 │   └── 📁 <project-name>/          # Individual projects
 └── 📁 architecture/                # High-level architecture
 ```
+
+### Agency Configuration
+
+The agency is configured in `.windsurf/office-config.md` with:
+
+- **Agent Roster:** 10 specialized agents (CEO, PM, Architect, Developer, Security, QA, Reviewer, Planner, Release Manager, Ops)
+- **Communication Protocols:** Inter-agent communication, meeting cadence
+- **Decision Authority Matrix:** Who decides what
+- **Operational Parameters:** Quality thresholds, iteration limits
+- **Client Interaction Model:** Engagement types and communication style
 
 ### Multi-Project Workspace
 
@@ -99,6 +114,15 @@ Each project under `projects/<project>/` has its own:
 | **60_review_merge** | Reviewer | Code review | Approval |
 | **70_release** | Release | Release preparation | Changelog |
 | **90_postmortem_memory** | Ops | Learning & improvements | Postmortem |
+
+### Agency Operations Workflows
+
+| Workflow | Purpose | Trigger |
+|----------|---------|---------|
+| **office-client-onboard** | Onboard new clients, establish communication | `/office-client-onboard` |
+| **office-project-status** | Consolidated view of all projects | `/office-project-status` |
+| **office-agent-meeting** | Virtual meetings between agents | `/office-agent-meeting` |
+| **office-report** | Generate agency reports | `/office-report` |
 
 ## 📚 Documentation
 

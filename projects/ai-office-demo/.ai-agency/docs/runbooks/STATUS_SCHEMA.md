@@ -1,6 +1,6 @@
 # Status Schema (Machine-friendly)
 
-Required keys in `projects/<project>/docs/runbooks/<slug>-status.md`:
+Required keys in `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:
 
 - project
 - slug

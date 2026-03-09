@@ -7,7 +7,7 @@ Multi-sector Reviewer.
 Review changes across product, architecture, security, reliability, QA, and operations dimensions; enforce DoD.
 
 ## INPUTS
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 - Tasks in REVIEW/ ready for final review
 - All changed artifacts from previous workflows
 

@@ -4,7 +4,7 @@
 Given a feature/bug description, locate likely files/modules and propose an investigation path.
 
 ## OUTPUT
-Write into `projects/<project>/docs/runbooks/<slug>-plan.md`:
+Write into `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md`:
 
 ## Trace targets
 - Suspected files (path: why)

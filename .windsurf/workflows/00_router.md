@@ -11,7 +11,7 @@ Every status artifact created/updated by router must include a multi-sector revi
 ## OUTPUTS (must)
 - project
 - slug
-- `projects/<project>/docs/runbooks/<slug>-status.md` created/updated
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md` created/updated
 - `review-document-multisector` applied to the status artifact and logged
 - state set to `router`
 - next workflow selected
@@ -45,7 +45,7 @@ Every status artifact created/updated by router must include a multi-sector revi
 
 5) Summarize request (3–7 bullets).
 6) Create slug: `feature-*`, `bugfix-*`, `refactor-*`, `spike-*`, `import-*`.
-7) Create status file from `projects/_skeleton/docs/runbooks/STATUS_TEMPLATE.md`.
+7) Create status file from `projects/_skeleton/.ai-agency/docs/runbooks/STATUS_TEMPLATE.md`.
 8) Run `review-document-multisector` on the status artifact and record result in
    `## Multi-sector document review log (mandatory)`.
 

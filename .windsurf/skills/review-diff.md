@@ -4,7 +4,7 @@
 Review changes for correctness, maintainability, and alignment with PRD/ADR.
 
 ## OUTPUT
-Add to `projects/<project>/docs/runbooks/<slug>-status.md`:
+Add to `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:
 
 ## Review notes
 - Must fix:

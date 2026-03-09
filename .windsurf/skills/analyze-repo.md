@@ -4,7 +4,7 @@
 Map repo structure: entrypoints, key modules, data layer, tests, build/CI.
 
 ## OUTPUT
-Append to `projects/<project>/docs/runbooks/<slug>-status.md`:
+Append to `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:
 
 ## Repo map
 - Tech stack guesses:

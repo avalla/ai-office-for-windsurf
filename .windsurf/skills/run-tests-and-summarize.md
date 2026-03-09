@@ -4,7 +4,7 @@
 Run relevant checks and summarize failures into actionable items.
 
 ## OUTPUT
-Update `projects/<project>/docs/runbooks/<slug>-status.md`:
+Update `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:
 
 ## Checks run
 - Command: ...

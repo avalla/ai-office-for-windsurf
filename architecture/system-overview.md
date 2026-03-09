@@ -15,18 +15,26 @@ User Intent
    v
 Workflow Router (.windsurf/workflows)
    |
-   v
-Role-specific execution via Skills (.windsurf/skills)
+   +-- Project Workflows --> Role-specific execution via Skills --> Project Artifacts
+   |                              |
+   |                              v
+   |                         Quality Gates --> Release Evidence + Postmortem
    |
-   v
-Project Artifacts (projects/<project>/docs/*)
-   |
-   v
-Quality Gates (.github/workflows + policy/rule checks)
-   |
-   v
-Release Evidence + Postmortem + Global Learnings (docs/decision-log.md)
+   +-- Agency Workflows --> Office Operations (office/)
+                                  |
+                                  v
+                             Client Management, Reports, Meetings
 ```
+
+## Agency Operations Layer
+
+The framework now includes an **Agency Operations** layer for managing the virtual AI agency:
+
+- **Configuration:** `.windsurf/office-config.md` defines agents, roles, competencies
+- **Operations Directory:** `office/` stores client profiles, meeting archives, reports
+- **Workflows:** Client onboarding, project status, agent meetings, reporting
+
+This enables the framework to operate as a complete virtual software agency, not just a project development tool.
 
 ## Core execution flow
 
@@ -42,7 +50,7 @@ Release Evidence + Postmortem + Global Learnings (docs/decision-log.md)
 ## Data and artifact boundaries
 
 - Framework-wide knowledge is stored in `docs/`.
-- Project-specific decisions and execution evidence are stored in `projects/<project>/docs/`.
+- Project-specific decisions and execution evidence are stored in `projects/<project>/.ai-agency/docs/`.
 - Reusable conventions and constraints are stored in `.windsurf/rules`, `.windsurf/policies`, and `.windsurf/templates`.
 
 ## Non-functional priorities

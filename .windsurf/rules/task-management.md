@@ -82,9 +82,11 @@ trigger: always_on
 
 ```bash
 # After each move, always run:
-echo "TODO: $(ls tasks/TODO/*.md 2>/dev/null | wc -l)" > tasks/README.md
+echo "BACKLOG: $(ls tasks/BACKLOG/*.md 2>/dev/null | wc -l)" > tasks/README.md
+echo "TODO: $(ls tasks/TODO/*.md 2>/dev/null | wc -l)" >> tasks/README.md
 echo "WIP: $(ls tasks/WIP/*.md 2>/dev/null | wc -l)" >> tasks/README.md
 echo "REVIEW: $(ls tasks/REVIEW/*.md 2>/dev/null | wc -l)" >> tasks/README.md
+echo "REJECTED: $(ls tasks/REJECTED/*.md 2>/dev/null | wc -l)" >> tasks/README.md
 echo "DONE: $(ls tasks/DONE/*.md 2>/dev/null | wc -l)" >> tasks/README.md
 ```
 

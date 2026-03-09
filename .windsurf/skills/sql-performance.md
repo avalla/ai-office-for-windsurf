@@ -5,10 +5,10 @@ Identify and mitigate SQL/database performance risks for changed queries and sch
 
 ## INPUTS
 - changed SQL/query paths
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 
 ## OUTPUT
-- Append to `projects/<project>/docs/runbooks/<slug>-status.md`:
+- Append to `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:
   - slow-path candidates
   - index opportunities
   - query-shape improvements

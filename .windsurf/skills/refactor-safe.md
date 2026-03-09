@@ -4,12 +4,12 @@
 Refactor with minimal risk, preserving behavior and evidence trail.
 
 ## INPUTS
-- `projects/<project>/docs/runbooks/<slug>-tasks.md`
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 
 ## OUTPUT
 - Minimal focused code changes tied to explicit task IDs.
-- Update `projects/<project>/docs/runbooks/<slug>-status.md` with:
+- Update `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md` with:
   - impacted files
   - checks run (lint/test/typecheck/build) and PASS/FAIL
   - rollback note for risky changes

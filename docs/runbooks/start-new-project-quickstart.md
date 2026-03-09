@@ -19,12 +19,12 @@ Enable a new team member to start and run one project end-to-end without direct 
 3. Pick a feature slug:
    - use a stable slug such as `feature-<domain>-<scope>`
 4. Create or refine core artifacts (if needed):
-   - `projects/<project>/docs/prd/<slug>.md`
-   - `projects/<project>/docs/adr/<slug>.md`
-   - `projects/<project>/docs/runbooks/<slug>-plan.md`
-   - `projects/<project>/docs/runbooks/<slug>-tasks.md`
-   - `projects/<project>/docs/runbooks/<slug>-status.md`
-   - `projects/<project>/docs/qa/<slug>-testplan.md`
+   - `projects/<project>/.ai-agency/docs/prd/<slug>.md`
+   - `projects/<project>/.ai-agency/docs/adr/<slug>.md`
+   - `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md`
+   - `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md`
+   - `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
+   - `projects/<project>/.ai-agency/docs/qa/<slug>-testplan.md`
 5. Initialize status metadata:
    - set `project`, `slug`, `state`, `owner`, `qa_iteration`, `review_iteration`, `blocked_reason`
 6. For each written/updated artifact, execute `review-document-multisector` and apply improvements.

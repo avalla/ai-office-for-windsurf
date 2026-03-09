@@ -8,13 +8,13 @@ Validate behavior. Produce test plan + PASS/FAIL.
 Before completion, re-verify and improve the QA test plan through multi-sector review.
 
 ## INPUTS
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 - Tasks in WIP/ ready for QA validation
 - Implementation evidence from dev workflow
 - Optional: Security pentest report from `45_security_pentest` workflow
 
 ## OUTPUTS (must)
-- `projects/<project>/docs/qa/<slug>-testplan.md`
+- `projects/<project>/.ai-agency/docs/qa/<slug>-testplan.md`
 - `review-document-multisector` executed on test plan and improvements applied
 - status `## Multi-sector document review log (mandatory)` updated for QA artifact
 - status: `state: qa`, `owner: qa`

@@ -4,7 +4,7 @@
 Fast structured security review: secrets, auth boundaries, injection, data access.
 
 ## OUTPUT
-Append to `projects/<project>/docs/runbooks/<slug>-status.md`:
+Append to `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:
 
 ## Security quickcheck
 - Secrets exposure: PASS/FAIL (+ details)

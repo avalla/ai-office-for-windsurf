@@ -12,9 +12,11 @@ const projectName = process.argv[2] || 'new-project';
 
 const structure = {
   tasks: {
+    'BACKLOG': [],
     'TODO': [],
     'WIP': [],
     'REVIEW': [],
+    'REJECTED': [],
     'DONE': [],
     'ARCHIVED': []
   },
@@ -53,15 +55,15 @@ function createFile(filePath, content) {
 
 function initializeAgencyFolder(basePath) {
   const agencyPath = path.join(basePath, '.ai-agency');
-  
+
   // Create main folder
   createDirectory(agencyPath);
-  
+
   // Create subdirectories
   Object.entries(structure).forEach(([key, subdirs]) => {
     const mainDir = path.join(agencyPath, key);
     createDirectory(mainDir);
-    
+
     if (typeof subdirs === 'object') {
       Object.entries(subdirs).forEach(([subkey, files]) => {
         if (subkey !== 'README.md') {
@@ -70,17 +72,17 @@ function initializeAgencyFolder(basePath) {
       });
     }
   });
-  
+
   // Update config.json with project name
   const configPath = path.join(agencyPath, 'config.json');
   const config = require(configPath);
   config.project.name = projectName;
   config.project.created = new Date().toISOString().split('T')[0];
   config.project.updated = config.project.created;
-  
+
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
   console.log(`Updated: ${configPath}`);
-  
+
   console.log(`\n✅ .ai-agency folder initialized for project: ${projectName}`);
   console.log(`📁 Location: ${agencyPath}`);
   console.log(`\nNext steps:`);

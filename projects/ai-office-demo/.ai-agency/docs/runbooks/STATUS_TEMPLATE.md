@@ -22,7 +22,7 @@ updated_at: <YYYY-MM-DD>
   Notes: ...
 
 ## Multi-sector document review log (mandatory)
-- Artifact: `projects/<project>/docs/...`
+- Artifact: `projects/<project>/.ai-agency/docs/...`
   Reviewer: multi_sector_reviewer
   Result: PASS/FAIL/NOT RUN
   Improvements applied:

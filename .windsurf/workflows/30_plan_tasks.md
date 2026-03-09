@@ -8,11 +8,11 @@ Convert macro-plan into an **execution-ready task breakdown**.
 Before completion, re-verify and improve the task document through multi-sector review.
 
 ## INPUTS
-- `projects/<project>/docs/runbooks/<slug>-plan.md`
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 
 ## OUTPUTS (must)
-- Create/update `projects/<project>/docs/runbooks/<slug>-tasks.md` using `.windsurf/templates/runbook-tasks.md`
+- Create/update `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md` using `.windsurf/templates/runbook-tasks.md`
 - **Create individual task files** in `projects/<project>/.ai-agency/tasks/TODO/` for each task
 - `review-document-multisector` executed on tasks and improvements applied
 - status `## Multi-sector document review log (mandatory)` updated for tasks

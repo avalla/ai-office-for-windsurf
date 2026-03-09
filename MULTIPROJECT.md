@@ -2,7 +2,7 @@
 
 Artifacts are namespaced by project:
 
-- `projects/<project>/docs/...`
+- `projects/<project>/.ai-agency/docs/...`
 
 Router selects `project` (default: `default`).
 

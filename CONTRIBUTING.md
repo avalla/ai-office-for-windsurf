@@ -18,12 +18,12 @@ This repository uses the **AI Office workflow**.
 For `bugfix/refactor/spike`, use: Router -> Planner -> Plan Tasks -> Implementation -> QA -> Review -> Release -> Postmortem.
 
 ## Required artifacts
-- `projects/<project>/docs/prd/<slug>.md` (feature path)
-- `projects/<project>/docs/adr/<slug>.md` (feature path)
-- `projects/<project>/docs/qa/<slug>-testplan.md`
-- `projects/<project>/docs/runbooks/<slug>-plan.md`
-- `projects/<project>/docs/runbooks/<slug>-tasks.md`
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/prd/<slug>.md` (feature path)
+- `projects/<project>/.ai-agency/docs/adr/<slug>.md` (feature path)
+- `projects/<project>/.ai-agency/docs/qa/<slug>-testplan.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 
 Every written/updated artifact must:
 - include `## Multi-sector review (mandatory)` with PASS/FAIL and improvements

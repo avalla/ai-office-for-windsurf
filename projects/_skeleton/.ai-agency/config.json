@@ -9,7 +9,15 @@
     "version": "1.0.0",
     "structure": {
       "tasks": {
-        "states": ["TODO", "WIP", "REVIEW", "DONE", "ARCHIVED"],
+        "states": [
+          "BACKLOG",
+          "TODO",
+          "WIP",
+          "REVIEW",
+          "REJECTED",
+          "DONE",
+          "ARCHIVED"
+        ],
         "template": "task-id-descriptive-title.md"
       },
       "architecture": {
@@ -26,16 +34,35 @@
   },
   "workflow": {
     "task_states": {
+      "BACKLOG": "Ideas and unprioritized tasks",
       "TODO": "Ready to start",
       "WIP": "Currently working on",
       "REVIEW": "Ready for review/feedback",
+      "REJECTED": "Failed review, needs rework",
       "DONE": "Completed",
       "ARCHIVED": "Cancelled or obsolete"
     },
     "task_transitions": {
-      "TODO": ["WIP", "ARCHIVED"],
+      "BACKLOG": [
+        "TODO",
+        "ARCHIVED"
+      ],
+      "TODO": [
+        "WIP",
+        "BACKLOG",
+        "ARCHIVED"
+      ],
       "WIP": ["REVIEW", "TODO", "ARCHIVED"],
-      "REVIEW": ["DONE", "WIP", "TODO"],
+      "REVIEW": [
+        "DONE",
+        "REJECTED",
+        "WIP"
+      ],
+      "REJECTED": [
+        "WIP",
+        "BACKLOG",
+        "ARCHIVED"
+      ],
       "DONE": [],
       "ARCHIVED": []
     },
@@ -141,32 +168,119 @@
           "user-testing",
           "visual-design"
         ]
+      },
+      "marketing": {
+        "name": "Marketing Team",
+        "description": "Growth, content, campaigns, analytics",
+        "skills": [
+          "content-marketing",
+          "seo",
+          "analytics",
+          "social-media",
+          "email-marketing",
+          "growth-hacking",
+          "copywriting",
+          "brand-strategy"
+        ],
+        "task_types": [
+          "campaign",
+          "content-creation",
+          "seo-optimization",
+          "analytics-review",
+          "landing-page",
+          "email-sequence"
+        ]
+      },
+      "security": {
+        "name": "Security Team",
+        "description": "Application security, compliance, penetration testing",
+        "skills": [
+          "penetration-testing",
+          "security-audit",
+          "compliance",
+          "encryption",
+          "authentication",
+          "authorization",
+          "vulnerability-assessment",
+          "incident-response"
+        ],
+        "task_types": [
+          "security-audit",
+          "penetration-test",
+          "compliance-review",
+          "vulnerability-fix",
+          "security-policy",
+          "incident-response"
+        ]
+      },
+      "creative": {
+        "name": "Creative Team",
+        "description": "Brand identity, visual assets, multimedia production",
+        "skills": [
+          "graphic-design",
+          "illustration",
+          "motion-graphics",
+          "video-production",
+          "photography",
+          "brand-identity",
+          "3d-modeling",
+          "animation"
+        ],
+        "task_types": [
+          "brand-assets",
+          "illustration",
+          "video-production",
+          "motion-graphics",
+          "icon-set",
+          "marketing-collateral"
+        ]
       }
     },
     "team_transitions": {
       "frontend": [
         "backend",
         "design",
-        "qa"
+        "qa",
+        "creative"
       ],
       "backend": [
         "frontend",
         "devops",
-        "qa"
+        "qa",
+        "security"
       ],
       "devops": [
         "backend",
-        "qa"
+        "qa",
+        "security"
       ],
       "qa": [
         "frontend",
         "backend",
         "devops",
-        "design"
+        "design",
+        "security"
       ],
       "design": [
         "frontend",
+        "qa",
+        "creative",
+        "marketing"
+      ],
+      "marketing": [
+        "design",
+        "creative",
+        "frontend"
+      ],
+      "security": [
+        "backend",
+        "devops",
         "qa"
+      ],
+      "creative": [
+        "design",
+        "marketing",
+        "frontend"
       ]
     },
     "assignment_rules": {

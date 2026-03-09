@@ -20,7 +20,7 @@ If a guard is exceeded:
 
 ## Determinism
 All workflows must:
-- read/update `projects/<project>/docs/runbooks/<slug>-status.md`
+- read/update `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 - keep `project` + `slug` consistent across all artifacts
 - execute `review-document-multisector` for every written/updated artifact before workflow completion
 - update `## Multi-sector document review log (mandatory)` in status for each reviewed artifact

@@ -8,20 +8,20 @@ This repository is an **AI Software Company framework** for Windsurf Cascade.
 
 ## Source of truth and precedence
 When conflicts exist, resolve using:
-1) artifacts in `/projects/<project>/docs`
+1) artifacts in `/projects/<project>/.ai-agency/docs`
 2) rules/policies
-3) memory in `/projects/<project>/memory`
+3) memory in `/projects/<project>/.ai-agency/memory`
 4) chat context
 
 ## Artifacts (communication contract)
 All work is namespaced by **project**.
 
-- `projects/<project>/docs/prd/<slug>.md` — requirements
-- `projects/<project>/docs/adr/<slug>.md` — architecture decisions
-- `projects/<project>/docs/qa/<slug>-testplan.md` — QA plan + results
-- `projects/<project>/docs/runbooks/<slug>-plan.md` — macro plan
-- `projects/<project>/docs/runbooks/<slug>-tasks.md` — task breakdown (enterprise)
-- `projects/<project>/docs/runbooks/<slug>-status.md` — FSM state + evidence
+- `projects/<project>/.ai-agency/docs/prd/<slug>.md` — requirements
+- `projects/<project>/.ai-agency/docs/adr/<slug>.md` — architecture decisions
+- `projects/<project>/.ai-agency/docs/qa/<slug>-testplan.md` — QA plan + results
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md` — macro plan
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md` — task breakdown (enterprise)
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md` — FSM state + evidence
 
 Framework-level artifacts (global):
 - `docs/repo-graph.md` — framework repo graph / audit baseline

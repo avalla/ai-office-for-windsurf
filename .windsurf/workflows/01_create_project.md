@@ -8,12 +8,12 @@ Create a new project from skeleton, ask user for missing details, initialize all
 
 ## OUTPUTS (must)
 - `projects/<project>/` created from skeleton
-- `projects/<project>/docs/prd/<slug>.md` created (may be placeholder)
-- `projects/<project>/docs/adr/<slug>.md` created (may be placeholder)
-- `projects/<project>/docs/runbooks/<slug>-plan.md` created (may be placeholder)
-- `projects/<project>/docs/runbooks/<slug>-tasks.md` created (may be placeholder)
-- `projects/<project>/docs/runbooks/<slug>-status.md` created and initialized
-- `projects/<project>/docs/qa/<slug>-testplan.md` created (may be placeholder)
+- `projects/<project>/.ai-agency/docs/prd/<slug>.md` created (may be placeholder)
+- `projects/<project>/.ai-agency/docs/adr/<slug>.md` created (may be placeholder)
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md` created (may be placeholder)
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md` created (may be placeholder)
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md` created and initialized
+- `projects/<project>/.ai-agency/docs/qa/<slug>-testplan.md` created (may be placeholder)
 - all created artifacts include `## Multi-sector review (mandatory)` and initial reviewer notes
 - status: `state: create_project`, `owner: create_project`
 - next: `10_ceo_prd` (to start the feature workflow)
@@ -30,7 +30,7 @@ Create a new project from skeleton, ask user for missing details, initialize all
 
 3) Create project folder:
    - If `projects/<project>/` does not exist, copy from `projects/_skeleton/`.
-   - **Create task directories**: `projects/<project>/.ai-agency/tasks/TODO/`, `WIP/`, `REVIEW/`, `DONE/`, `ARCHIVED/`
+   - **Create task directories**: `projects/<project>/.ai-agency/tasks/BACKLOG/`, `TODO/`, `WIP/`, `REVIEW/`, `REJECTED/`, `DONE/`, `ARCHIVED/`
    - Create `projects/<project>/.ai-agency/tasks/README.md` with task count template
    - If it exists, ask: "Project already exists. Continue with existing project or choose a different name?"
 
@@ -43,7 +43,7 @@ Create a new project from skeleton, ask user for missing details, initialize all
    - If unclear, ask for a short one-line description to generate slug.
 
 5) Create core artifacts (may be placeholders):
-   - Create status file from `projects/_skeleton/docs/runbooks/STATUS_TEMPLATE.md`.
+   - Create status file from `projects/_skeleton/.ai-agency/docs/runbooks/STATUS_TEMPLATE.md`.
    - Set `project`, `slug`, `state: create_project`, `owner: create_project`, current date.
    - Create placeholder PRD/ADR/plan/tasks/QA from templates if they exist.
    - If templates are missing, create minimal placeholder files with clear TODO sections.

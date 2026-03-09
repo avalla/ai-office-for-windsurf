@@ -5,12 +5,12 @@ Re-verify and improve every written artifact using a multi-sector reviewer lens 
 
 ## WHEN TO USE
 Use immediately after creating or updating any project artifact, including:
-- `docs/prd/<slug>.md`
-- `docs/adr/<slug>.md`
-- `docs/runbooks/<slug>-plan.md`
-- `docs/runbooks/<slug>-tasks.md`
-- `docs/qa/<slug>-testplan.md`
-- `docs/runbooks/<slug>-status.md`
+- `.ai-agency/docs/prd/<slug>.md`
+- `.ai-agency/docs/adr/<slug>.md`
+- `.ai-agency/docs/runbooks/<slug>-plan.md`
+- `.ai-agency/docs/runbooks/<slug>-tasks.md`
+- `.ai-agency/docs/qa/<slug>-testplan.md`
+- `.ai-agency/docs/runbooks/<slug>-status.md`
 
 ## MULTI-SECTOR REVIEW CHECKLIST
 - Product: scope clarity, acceptance criteria quality, user value alignment.
@@ -33,7 +33,7 @@ Append or update the `## Multi-sector review (mandatory)` section in the reviewe
   - ...
 
 ## STATUS EVIDENCE
-Also add an entry to `projects/<project>/docs/runbooks/<slug>-status.md` under `## Checks run`:
+Also add an entry to `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md` under `## Checks run`:
 - Command: multi-sector document review (`<artifact-path>`)
 - Result: PASS/FAIL
 - Notes: summary of key improvements and unresolved issues.

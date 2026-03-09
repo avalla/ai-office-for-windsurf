@@ -15,9 +15,10 @@ This document visualizes the framework structure and orchestration model in mult
 ├── projects/
 │   ├── _skeleton/   # source template for new projects
 │   └── <project>/
-│       ├── docs/    # project-scoped communication artifacts
-│       ├── architecture/
-│       └── memory/
+│       └── .ai-agency/  # project-scoped metaframework
+│           ├── docs/        # communication artifacts
+│           ├── memory/      # project learnings
+│           └── tasks/       # kanban states
 ├── docs/            # framework-level docs (global)
 └── .github/workflows/
     └── framework-ci.yml  # structural quality gates
@@ -28,15 +29,15 @@ This document visualizes the framework structure and orchestration model in mult
 Primary channel is artifact-based communication, not chat memory:
 
 - project status and evidence:
-  - `projects/<project>/docs/runbooks/<slug>-status.md`
+  - `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 - planning and execution:
-  - `projects/<project>/docs/runbooks/<slug>-plan.md`
-  - `projects/<project>/docs/runbooks/<slug>-tasks.md`
+  - `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md`
+  - `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md`
 - product and architecture decisions:
-  - `projects/<project>/docs/prd/<slug>.md`
-  - `projects/<project>/docs/adr/<slug>.md`
+  - `projects/<project>/.ai-agency/docs/prd/<slug>.md`
+  - `projects/<project>/.ai-agency/docs/adr/<slug>.md`
 - validation:
-  - `projects/<project>/docs/qa/<slug>-testplan.md`
+  - `projects/<project>/.ai-agency/docs/qa/<slug>-testplan.md`
 - mandatory review metadata:
   - each artifact includes `## Multi-sector review (mandatory)`
   - status includes `## Multi-sector document review log (mandatory)`

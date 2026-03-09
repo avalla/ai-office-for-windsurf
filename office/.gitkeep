@@ -1,0 +1,35 @@
+# AI Office - Agency Operations Directory
+
+This directory contains operational files for the AI Office virtual agency.
+
+## Structure
+
+```
+office/
+├── clients/           # Client profiles and communications
+│   └── <client-slug>/
+│       ├── profile.md
+│       └── communications/
+├── meetings/          # Virtual meeting archives
+│   └── YYYY-MM-DD-<topic>.md
+├── reports/           # Generated reports
+│   ├── weekly/
+│   ├── clients/
+│   └── technical/
+└── README.md          # This file
+```
+
+## Usage
+
+- **Client Onboarding:** Use `/office-client-onboard` workflow
+- **Project Status:** Use `/office-project-status` workflow
+- **Agent Meetings:** Use `/office-agent-meeting` workflow
+- **Reports:** Use `/office-report` workflow
+
+## Configuration
+
+Agency configuration is in `.windsurf/office-config.md`
+
+---
+
+Created: 2026-03-09

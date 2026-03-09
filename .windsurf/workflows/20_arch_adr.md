@@ -8,7 +8,7 @@ Write ADR with trade-offs and alternatives.
 Before completion, re-verify and improve the ADR through multi-sector review.
 
 ## OUTPUTS (must)
-- `projects/<project>/docs/adr/<slug>.md` from `.windsurf/templates/adr.md`
+- `projects/<project>/.ai-agency/docs/adr/<slug>.md` from `.windsurf/templates/adr.md`
 - `review-document-multisector` executed on ADR and improvements applied
 - status `## Multi-sector document review log (mandatory)` updated for ADR
 - status: `state: adr`, `owner: architect`

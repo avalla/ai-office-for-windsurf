@@ -93,26 +93,26 @@ jobs:
 
       - name: Project skeleton contains required dirs
         run: |
-          test -d "projects/_skeleton/docs/prd"
-          test -d "projects/_skeleton/docs/adr"
-          test -d "projects/_skeleton/docs/qa"
-          test -d "projects/_skeleton/docs/runbooks"
+          test -d "projects/_skeleton/.ai-agency/docs/prd"
+          test -d "projects/_skeleton/.ai-agency/docs/adr"
+          test -d "projects/_skeleton/.ai-agency/docs/qa"
+          test -d "projects/_skeleton/.ai-agency/docs/runbooks"
 
       - name: Multi-project status schema consistency
         run: |
           expected_state="state: router|create_project|prd|adr|plan|tasks|dev|qa|review|release|postmortem|blocked"
           expected_owner="owner: router|create_project|planner|ceo_pm|architect|dev|qa|reviewer|release|ops"
 
-          grep -Fq 'Required keys in `projects/<project>/docs/runbooks/<slug>-status.md`:' docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq 'Required keys in `projects/<project>/docs/runbooks/<slug>-status.md`:' projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq 'Required keys in `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:' docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq 'Required keys in `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:' projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md
           grep -Fq "project: <project>" docs/runbooks/STATUS_TEMPLATE.md
-          grep -Fq "project: <project>" projects/_skeleton/docs/runbooks/STATUS_TEMPLATE.md
+          grep -Fq "project: <project>" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_TEMPLATE.md
           grep -Fq "## Multi-sector document review log (mandatory)" docs/runbooks/STATUS_TEMPLATE.md
-          grep -Fq "## Multi-sector document review log (mandatory)" projects/_skeleton/docs/runbooks/STATUS_TEMPLATE.md
+          grep -Fq "## Multi-sector document review log (mandatory)" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_TEMPLATE.md
           grep -Fq 'Mandatory markdown section in every status artifact:' docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq 'Mandatory markdown section in every status artifact:' projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq 'Mandatory markdown section in every status artifact:' projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md
 
           grep -Fq "$expected_state" docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq "$expected_state" projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq "$expected_state" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md
           grep -Fq "$expected_owner" docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq "$expected_owner" projects/_skeleton/docs/runbooks/STATUS_SCHEMA.md
+          grep -Fq "$expected_owner" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md

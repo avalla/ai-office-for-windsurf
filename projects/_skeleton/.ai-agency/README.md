@@ -7,33 +7,34 @@ This folder contains metaframework data for project management, architecture doc
 ```
 .ai-agency/
 ├── README.md                 # This file
-├── config.json              # Project configuration
+├── config.json              # Project configuration (teams, workflows, transitions)
 ├── init.js                  # Initialization script
 ├── .gitignore               # Git ignore rules
 ├── tasks/                   # Kanban-style task management
+│   ├── BACKLOG/            # Ideas and unprioritized tasks
 │   ├── TODO/               # Tasks to be started
 │   ├── WIP/                # Work in progress
 │   ├── REVIEW/             # Tasks ready for review
+│   ├── REJECTED/           # Failed review, needs rework
 │   ├── DONE/               # Completed tasks
 │   ├── ARCHIVED/           # Cancelled or obsolete tasks
 │   └── README.md           # Task management guide
-├── architecture/           # Architecture documentation
-│   ├── README.md           # Architecture guide
-│   ├── adr-template.md     # Architecture Decision Record template
-│   ├── decisions/          # ADR files
-│   └── diagrams/           # Architecture diagrams
 ├── docs/                   # Project documentation
 │   ├── README.md           # Documentation guide
 │   ├── prd/                # Product Requirements Documents
+│   ├── adr/                # Architecture Decision Records
 │   ├── qa/                 # Quality assurance documentation
-│   ├── runbooks/           # Operational procedures
+│   ├── runbooks/           # Operational procedures (plans, tasks, status)
 │   ├── api/                # API documentation
 │   └── guides/             # User guides and tutorials
+├── architecture/           # Architecture diagrams (optional)
+│   └── diagrams/           # Architecture diagrams
 └── memory/                 # Project memory and insights
     ├── README.md           # Memory guide
     ├── patterns/           # Design and code patterns
     ├── insights/           # Key learnings and discoveries
     ├── decisions/          # Important decisions
+    ├── bugs/               # Bug patterns and resolutions
     └── knowledge/          # Domain-specific expertise
 ```
 
@@ -53,16 +54,18 @@ This folder contains metaframework data for project management, architecture doc
    ```
 
 3. **Start documenting:**
-   - Add architecture decisions to `architecture/decisions/`
+   - Add architecture decisions to `docs/adr/`
    - Document patterns in `memory/patterns/`
    - Create project documentation in `docs/`
 
 ## Task Management
 
 ### Task States
+- **BACKLOG** - Ideas and unprioritized tasks
 - **TODO** - Tasks ready to be started
 - **WIP** - Currently in progress
 - **REVIEW** - Ready for review/feedback
+- **REJECTED** - Failed review, needs rework
 - **DONE** - Completed
 - **ARCHIVED** - Cancelled or obsolete
 

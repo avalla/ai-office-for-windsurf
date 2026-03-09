@@ -9,11 +9,11 @@ Do NOT produce full task breakdown here.
 Before completion, re-verify and improve the macro-plan through multi-sector review.
 
 ## INPUTS
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 - PRD/ADR if present
 
 ## OUTPUTS (must)
-- `projects/<project>/docs/runbooks/<slug>-plan.md` from `.windsurf/templates/runbook-plan.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-plan.md` from `.windsurf/templates/runbook-plan.md`
 - `review-document-multisector` executed on plan and improvements applied
 - status `## Multi-sector document review log (mandatory)` updated for plan
 - status: `state: plan`, `owner: planner`

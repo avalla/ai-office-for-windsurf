@@ -4,12 +4,12 @@
 Execute relevant test suites and report reliable evidence for gate decisions.
 
 ## INPUTS
-- `projects/<project>/docs/runbooks/<slug>-tasks.md`
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 
 ## OUTPUT
 - Run task-defined validation commands in order.
-- Append each command result to `projects/<project>/docs/runbooks/<slug>-status.md`:
+- Append each command result to `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:
   - Command
   - Result: PASS/FAIL/NOT RUN
   - Notes (short failure hint)

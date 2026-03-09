@@ -8,8 +8,8 @@ Implement tasks and record evidence.
 Any status updates produced in this workflow must be re-verified through multi-sector review.
 
 ## INPUTS
-- `projects/<project>/docs/runbooks/<slug>-tasks.md`
-- `projects/<project>/docs/runbooks/<slug>-status.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-tasks.md`
+- `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`
 - Tasks assigned to developer in tasks/TODO/
 
 ## OUTPUTS (must)

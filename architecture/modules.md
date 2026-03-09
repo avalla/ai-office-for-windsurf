@@ -30,12 +30,12 @@ Preferred dependency direction is top-down and artifact-driven:
 5. Templates standardize generated artifacts.
 6. CI validates structure and consistency.
 
-No module should bypass the artifact contract in `projects/<project>/docs/*`.
+No module should bypass the artifact contract in `projects/<project>/.ai-agency/docs/*`.
 
 ## 3) Boundaries and anti-coupling rules
 
 - Framework-level documentation (`docs/`) must not contain project-specific mutable state.
-- Project-specific state and evidence must remain under `projects/<project>/docs/runbooks/`.
+- Project-specific state and evidence must remain under `projects/<project>/.ai-agency/docs/runbooks/`.
 - Skills should remain reusable and avoid hardcoding project names.
 - Workflows should reference canonical artifact paths only.
 - CI checks should fail fast on missing/empty mandatory framework artifacts.
