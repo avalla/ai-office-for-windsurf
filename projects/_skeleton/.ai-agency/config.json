@@ -3,16 +3,7 @@
     "name": "",
     "version": "0.1.0",
     "created": "",
-    "updated": "",
-    "agency": "crazy-studio",
-    "project_type": "game",
-    "tech_stack": [
-      "bun",
-      "typescript",
-      "vite",
-      "phaser",
-      "three.js"
-    ]
+    "updated": ""
   },
   "metaframework": {
     "version": "1.0.0",
@@ -34,21 +25,10 @@
         "diagrams": true
       },
       "docs": {
-        "sections": [
-          "prd",
-          "qa",
-          "runbooks",
-          "api",
-          "guides"
-        ]
+        "sections": ["prd", "qa", "runbooks", "api", "guides"]
       },
       "memory": {
-        "categories": [
-          "patterns",
-          "insights",
-          "decisions",
-          "knowledge"
-        ]
+        "categories": ["patterns", "insights", "decisions", "knowledge"]
       }
     }
   },
@@ -72,11 +52,7 @@
         "BACKLOG",
         "ARCHIVED"
       ],
-      "WIP": [
-        "REVIEW",
-        "TODO",
-        "ARCHIVED"
-      ],
+      "WIP": ["REVIEW", "TODO", "ARCHIVED"],
       "REVIEW": [
         "DONE",
         "REJECTED",
@@ -313,29 +289,5 @@
       "max_concurrent_tasks": 3,
       "skill_match_threshold": 0.7
     }
-  },
-  "tech_stack": {
-    "runtime": "bun",
-    "language": "typescript",
-    "bundler": "vite",
-    "frameworks": [
-      "phaser",
-      "three.js"
-    ],
-    "testing": [
-      "bun-test",
-      "playwright"
-    ],
-    "deployment": [
-      "vercel",
-      "netlify"
-    ],
-    "monitoring": [
-      "sentry",
-      "analytics"
-    ],
-    "description": "High-performance game development with creative tools",
-    "agency": "crazy-studio",
-    "project_type": "game"
   }
 }

@@ -16,7 +16,7 @@ graph TB
         P[projects/]
         O[office/]
     end
-
+    
     subgraph ".agents/"
         W1[workflows/]
         W2[skills/]
@@ -24,25 +24,24 @@ graph TB
         W4[policies/]
         W5[templates/]
     end
-
+    
     subgraph "projects/"
         S[_skeleton/]
         PR1[ai-office-demo/]
         PR2[autoepoque/]
         PR3[epic-birthday/]
         PR4[japan-softpower-research/]
-        PR5[rave-arcade-brawler/]
     end
-
+    
     subgraph "_skeleton/.ai-agency/"
         C[config.json]
         T[tasks/]
         DOCS[docs/]
         MEM[memory/]
     end
-
+    
     W --> W1 & W2 & W3 & W4 & W5
-    P --> S & PR1 & PR2 & PR3 & PR4 & PR5
+    P --> S & PR1 & PR2 & PR3 & PR4
     S --> C & T & DOCS & MEM
 ```
 
@@ -53,30 +52,30 @@ graph TB
 ```mermaid
 stateDiagram-v2
     [*] --> router
-
+    
     router --> create_project: new project
     router --> prd: feature
     router --> plan: bugfix/refactor/spike
-
+    
     create_project --> prd
-
+    
     prd --> adr
     adr --> plan
     plan --> tasks
     tasks --> dev
     dev --> qa
-
+    
     qa --> review: PASS
     qa --> dev: FAIL (iteration < 2)
     qa --> blocked: FAIL (iteration >= 2)
-
+    
     review --> release: PASS
     review --> dev: FAIL (iteration < 2)
     review --> blocked: FAIL (iteration >= 2)
-
+    
     release --> postmortem
     postmortem --> [*]
-
+    
     blocked --> plan: unblocked
 ```
 
@@ -96,12 +95,12 @@ graph LR
         TODO --> BL
         WIP --> TODO
     end
-
+    
     BL -.-> ARCHIVED
     TODO -.-> ARCHIVED
     WIP -.-> ARCHIVED
     REJECTED -.-> ARCHIVED
-
+    
     style BL fill:#90CAF9
     style TODO fill:#A5D6A7
     style WIP fill:#FFF59D
@@ -124,14 +123,14 @@ graph TB
         QA[QA Team]
         DS[Design Team]
     end
-
+    
     subgraph "Specialized Teams"
         SEC[Security Team]
         MKT[Marketing Team]
         CR[Creative Team]
         RS[Research Team]
     end
-
+    
     subgraph "Leadership"
         PM[CEO/PM]
         AR[Architect]
@@ -139,7 +138,7 @@ graph TB
         RL[Release]
         OP[Ops]
     end
-
+    
     PM --> FE & BE
     AR --> FE & BE & DE
     PL --> QA & DE
@@ -157,7 +156,6 @@ pie title Projects by Status
     "autoepoque" : 1
     "epic-birthday" : 1
     "japan-softpower-research" : 1
-    "rave-arcade-brawler" : 1
 ```
 
 ### Project Details
@@ -168,7 +166,6 @@ pie title Projects by Status
 | autoepoque | 🔄 In Progress | TBD | Minimal setup |
 | epic-birthday | 🔄 In Progress | TBD | Has root docs (migrate) |
 | japan-softpower-research | 🔄 In Progress | TBD | Minimal setup |
-| rave-arcade-brawler | ✅ Completed | 2026-03-09 | 3 tasks moved to DONE |
 
 ---
 
@@ -181,7 +178,7 @@ graph LR
         MS[Multi-sector Review]
         LG[Loop Guards]
     end
-
+    
     subgraph "Metrics"
         WF[Workflows: 15+]
         SK[Skills: 16]
@@ -189,7 +186,7 @@ graph LR
         TE[Teams: 9]
         TS[Task States: 7]
     end
-
+    
     CI --> WF & SK & RU
     MS --> TE
     LG --> TS
@@ -209,13 +206,13 @@ flowchart LR
         MEM[.ai-agency/memory/]
         TS[.ai-agency/tasks/]
     end
-
+    
     subgraph "Runbooks"
         PLAN[plan.md]
         TASKS[tasks.md]
         STATUS[status.md]
     end
-
+    
     RB --> PLAN & TASKS & STATUS
 ```
 
@@ -226,10 +223,6 @@ flowchart LR
 | Date | Action | Updated By |
 |------|--------|------------|
 | 2026-03-09 | Initial creation | Framework Review |
-| 2026-03-09 | Added rave-arcade-brawler project to framework map and project details | Create Project workflow |
-| 2026-03-09 | QA validation recorded for rave-arcade-brawler (build + smoke PASS) | 50_qa_validate |
-| 2026-03-09 | Review stage completed and tasks transitioned to DONE for rave-arcade-brawler | 60_review_merge |
-| 2026-03-09 | Postmortem completed and project marked as completed (rave-arcade-brawler) | 90_postmortem_memory |
 | | | |
 
 ---
