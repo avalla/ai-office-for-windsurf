@@ -3,7 +3,7 @@ Owner: Planner
 Date: 2025-03-07
 
 ## Summary
-Create a fast, secure, and beautiful demo website for AI Office for Antigravity using Vite + React + TypeScript + shadcn/ui stack. The project will deliver a professional marketing website with interactive demos, responsive design, and excellent performance metrics.
+Create a fast, secure, and beautiful demo website for AI Office for Windsurf using Vite + React + TypeScript + shadcn/ui stack. The project will deliver a professional marketing website with interactive demos, responsive design, and excellent performance metrics.
 
 ## Milestones (2–5)
 

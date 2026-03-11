@@ -8,7 +8,7 @@ Each project has its own `.ai-agency/` folder containing:
 - `tasks/` (kanban: BACKLOG, TODO, WIP, REVIEW, REJECTED, DONE, ARCHIVED)
 - `architecture/` (diagrams, optional)
 
-Global framework lives in `.agents/`.
+Global framework lives in `.windsurf/`.
 
 ## Create a new project
 1) Run `/create-project` workflow or `00_router`

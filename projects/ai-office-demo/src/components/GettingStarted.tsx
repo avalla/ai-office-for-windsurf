@@ -5,7 +5,7 @@ export function GettingStarted() {
     {
       number: "1",
       title: "Install AI Office",
-      description: "Download and install the AI Office extension for Antigravity from the marketplace.",
+      description: "Download and install the AI Office extension for Windsurf from the marketplace.",
       icon: Download
     },
     {

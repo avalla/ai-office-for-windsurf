@@ -1,6 +1,6 @@
-# 🤖 AI Office for Antigravity - Demo Website
+# 🤖 AI Office for Windsurf - Demo Website
 
-> A modern, fast, and secure demo website showcasing the powerful capabilities of AI Office for Antigravity
+> A modern, fast, and secure demo website showcasing the powerful capabilities of AI Office for Windsurf
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-blue.svg)](https://www.typescriptlang.org/)
@@ -9,7 +9,7 @@
 
 ## 🌟 Overview
 
-This demo website demonstrates the AI Office framework's ability to rapidly develop high-quality web applications using modern best practices. Built with cutting-edge technologies and following enterprise-grade standards, it serves as a showcase for what's possible with AI Office for Antigravity.
+This demo website demonstrates the AI Office framework's ability to rapidly develop high-quality web applications using modern best practices. Built with cutting-edge technologies and following enterprise-grade standards, it serves as a showcase for what's possible with AI Office for Windsurf.
 
 ### 🎯 Key Highlights
 
@@ -300,14 +300,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Getting Help
 
 - **Documentation**: Check this README and inline code comments
-- **Issues**: [Open an issue](https://github.com/ai-office-antigravity/issues) on GitHub
-- **Discussions**: [Join our community](https://github.com/ai-office-antigravity/discussions)
+- **Issues**: [Open an issue](https://github.com/ai-office-windsurf/issues) on GitHub
+- **Discussions**: [Join our community](https://github.com/ai-office-windsurf/discussions)
 - **Email**: Contact the AI Office team
 
 ### Resources
 
 - [AI Office Documentation](https://docs.ai-office.com)
-- [Antigravity Integration Guide](https://antigravity.ai-office.com)
+- [Windsurf Integration Guide](https://windsurf.ai-office.com)
 - [Community Forum](https://community.ai-office.com)
 - [Video Tutorials](https://youtube.com/ai-office)
 
@@ -318,6 +318,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Built with ❤️ by the AI Office Team**
 
 [![AI Office](https://img.shields.io/badge/AI%20Office-Powered%20by%20AI-blue)](https://ai-office.com)
-[![Antigravity](https://img.shields.io/badge/Antigravity-IDE%20Integration-green)](https://antigravity.ai-office.com)
+[![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-green)](https://windsurf.ai-office.com)
 
 </div>

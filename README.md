@@ -1,16 +1,16 @@
 
-# 🤖 AI Office for Antigravity
+# 🤖 AI Office for Windsurf
 
-> A comprehensive **AI Software Company framework** designed specifically for Antigravity IDE, enabling systematic project development with multi-role workflows and enterprise-grade quality assurance.
+> A comprehensive **AI Software Company framework** designed specifically for Windsurf IDE, enabling systematic project development with multi-role workflows and enterprise-grade quality assurance.
 
 ![Framework Status](https://img.shields.io/badge/Status-Production%20Ready-green)
 ![Version](https://img.shields.io/badge/Version-3.1-blue)
 [![License](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)
-![Antigravity](https://img.shields.io/badge/Antigravity-IDE%20Integration-purple)
+![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)
 
 ## 🌟 Overview
 
-AI Office for Antigravity is a **modular framework** that transforms how software projects are developed by implementing a complete AI-driven software company workflow. It provides structured processes, quality gates, and documentation standards that ensure consistent, high-quality project delivery.
+AI Office for Windsurf is a **modular framework** that transforms how software projects are developed by implementing a complete AI-driven software company workflow. It provides structured processes, quality gates, and documentation standards that ensure consistent, high-quality project delivery.
 
 ### 🎯 Key Features
 
@@ -28,8 +28,8 @@ AI Office for Antigravity is a **modular framework** that transforms how softwar
 ### Framework Structure
 
 ```
-ai-office-antigravity/
-├── 📁 .agents/                    # Framework core
+ai-office-windsurf/
+├── 📁 .windsurf/                    # Framework core
 │   ├── 📁 workflows/               # Workflow definitions
 │   ├── 📁 skills/                  # Reusable AI skills
 │   ├── 📁 rules/                   # Framework rules and constraints
@@ -52,7 +52,7 @@ ai-office-antigravity/
 
 ### Agency Configuration
 
-The agency is configured in `.agents/office-config.md` with:
+The agency is configured in `.windsurf/office-config.md` with:
 
 - **Agent Roster:** 21 specialized agents across orchestration, executive, design, creative, technical, quality, and operations layers
 - **Communication Protocols:** Inter-agent communication, meeting cadence
@@ -73,8 +73,8 @@ Each project under `projects/<project>/` has its own:
 
 ### Prerequisites
 
-- **Antigravity IDE** installed and configured
-- **Cascade AI** enabled in Antigravity
+- **Windsurf IDE** installed and configured
+- **Cascade AI** enabled in Windsurf
 - Repository cloned and up to date
 
 ### Quick Start
@@ -261,7 +261,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **🤖 Built by the AI Office Team**
 
 ![AI Office](https://img.shields.io/badge/AI%20Office-Powered%20by%20AI-blue)
-![Antigravity](https://img.shields.io/badge/Antigravity-IDE%20Integration-purple)
+![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)
 
 **Transforming software development with AI-driven workflows**
 

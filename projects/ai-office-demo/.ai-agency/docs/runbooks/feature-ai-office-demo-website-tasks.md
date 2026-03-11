@@ -60,7 +60,7 @@ Date: 2025-03-07
      - [ ] Performance impact is minimal
 
 6) **Task: Build Features Showcase Section**
-   - Goal: Create interactive demo of AI Office for Antigravity capabilities
+   - Goal: Create interactive demo of AI Office for Windsurf capabilities
    - Files: `src/components/FeaturesShowcase.tsx`, `src/components/FeatureCard.tsx`
    - Validation commands: `npm run test:e2e`, `npm run lighthouse`
    - DoD checklist:

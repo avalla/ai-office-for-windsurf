@@ -4,7 +4,7 @@ Date: 2026-03-04
 Owner: Framework team
 
 ## Purpose
-AI Office provides a documentation-first orchestration framework for multi-role software delivery in Antigravity.
+AI Office provides a documentation-first orchestration framework for multi-role software delivery in Windsurf.
 It is designed to standardize planning, execution, QA, review, release, and postmortem across multiple projects.
 
 ## System context
@@ -13,7 +13,7 @@ It is designed to standardize planning, execution, QA, review, release, and post
 User Intent
    |
    v
-Workflow Router (.agents/workflows)
+Workflow Router (.windsurf/workflows)
    |
    +-- Project Workflows --> Role-specific execution via Skills --> Project Artifacts
    |                              |
@@ -30,7 +30,7 @@ Workflow Router (.agents/workflows)
 
 The framework now includes an **Agency Operations** layer for managing the virtual AI agency:
 
-- **Configuration:** `.agents/office-config.md` defines agents, roles, competencies
+- **Configuration:** `.windsurf/office-config.md` defines agents, roles, competencies
 - **Operations Directory:** `office/` stores client profiles, meeting archives, reports
 - **Workflows:** Client onboarding, project status, agent meetings, reporting
 
@@ -51,7 +51,7 @@ This enables the framework to operate as a complete virtual software agency, not
 
 - Framework-wide knowledge is stored in `docs/`.
 - Project-specific decisions and execution evidence are stored in `projects/<project>/.ai-agency/docs/`.
-- Reusable conventions and constraints are stored in `.agents/rules`, `.agents/policies`, and `.agents/templates`.
+- Reusable conventions and constraints are stored in `.windsurf/rules`, `.windsurf/policies`, and `.windsurf/templates`.
 
 ## Non-functional priorities
 

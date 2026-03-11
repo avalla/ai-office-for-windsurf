@@ -4,7 +4,7 @@ Owner: Architect/CTO
 Date: 2025-03-07
 
 ## Context
-We need to create a demo website for AI Office for Antigravity that meets the following requirements:
+We need to create a demo website for AI Office for Windsurf that meets the following requirements:
 - **Fast**: Page load speed < 2 seconds, Lighthouse score > 90
 - **Secure**: A+ security rating, XSS protection, CSP implementation
 - **Beautiful**: Modern, professional design with excellent UX

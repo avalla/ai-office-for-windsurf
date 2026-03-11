@@ -50,7 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Version 0.1.0 - Initial Release
 
-This is the initial release of the AI Office Demo Website, showcasing the capabilities of AI Office for Antigravity.
+This is the initial release of the AI Office Demo Website, showcasing the capabilities of AI Office for Windsurf.
 
 #### Features
 - **Modern Tech Stack**: Built with Vite, React 18, TypeScript, and Tailwind CSS

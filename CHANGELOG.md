@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
   - `docs/runbooks/start-new-project-quickstart.md`
   - `docs/runbooks/start-new-project-operational-checklist.md`
 - Residual risk report for beta operations (`docs/beta-residual-risks.md`)
-- Multi-sector document review skill (`.agents/skills/review-document-multisector.md`)
+- Multi-sector document review skill (`.windsurf/skills/review-document-multisector.md`)
 
 ### Changed
 - Multi-project contract alignment across CONTRIBUTING, skills, and status schema/template
