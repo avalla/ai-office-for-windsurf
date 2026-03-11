@@ -1,0 +1,70 @@
+{
+  "name": "@ai-office/mcp-adapter",
+  "version": "5.0.0",
+  "description": "AI Office MCP Adapter - Framework orchestration via Model Context Protocol",
+  "type": "module",
+  "main": "./dist/src/mcp-server/index.js",
+  "exports": {
+    ".": "./dist/src/mcp-server/index.js",
+    "./cli": "./dist/bin/ai-office.js"
+  },
+  "private": false,
+  "bin": {
+    "ai-office": "./dist/bin/ai-office.js",
+    "ai-office-mcp": "./dist/src/mcp-server/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
+    "dev:mcp": "bun run ./src/mcp-server/index.ts",
+    "dev:cli": "bun run ./bin/ai-office.ts",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix"
+  },
+  "files": [
+    "dist",
+    "framework",
+    "*.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "ai-office",
+    "framework",
+    "orchestration",
+    "windsurf",
+    "cursor",
+    "antigravity",
+    "vscode",
+    "ide"
+  ],
+  "author": "AI Office",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avalla/ai-office-for-windsurf.git"
+  },
+  "dependencies": {
+    "zod": "^3.22.4",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "commander": "^12.0.0",
+    "fs-extra": "^11.1.1",
+    "glob": "^10.3.10",
+    "markdown-it": "^13.0.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/markdown-it": "^13.0.2",
+    "typescript": "^5.9.3",
+    "bun-types": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

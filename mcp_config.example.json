@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "ai-office": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@ai-office/mcp-adapter",
+        "serve",
+        "--stdio"
+      ]
+    }
+  }
+}
