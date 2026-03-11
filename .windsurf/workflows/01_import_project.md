@@ -21,7 +21,7 @@ Import existing project into .ai-agency framework while preserving existing work
 - Team mapping established
 - `review-document-multisector` executed on all created artifacts
 - Status file created with import evidence
-- `FRAMEWORK_STATUS.md` updated with new project entry
+- `COMPANY_STATUS.md` updated with new project entry
 - next: `10_ceo_prd` (for PRD review) or directly to appropriate workflow based on project maturity
 
 ## IMPORT STEPS

@@ -8,7 +8,7 @@ Use this workflow when the request is a feature and you want full framework gove
 
 1. Start from `00_router`
    - Router classifies the request and captures project/slug.
-   - Router runs `quick-decision` once for user choice.
+   - Router runs `office-quick-decision` once for user choice.
 
 2. If user chooses **Direct Modification**
    - Implement immediately.

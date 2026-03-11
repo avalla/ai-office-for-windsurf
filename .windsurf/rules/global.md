@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # Global Rules
 
 - Artifacts-first. Communicate via `/docs`, not chat history.

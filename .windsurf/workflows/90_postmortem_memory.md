@@ -13,5 +13,5 @@ Before completion, re-verify postmortem learning documents through multi-sector 
 - `review-document-multisector` executed on updated postmortem documents
 - status `## Multi-sector document review log (mandatory)` updated for postmortem artifacts
 - status: `state: postmortem`, `owner: ops`
-- `FRAMEWORK_STATUS.md` Update Log updated with project completion
-- Project marked as completed in FRAMEWORK_STATUS.md Project Details table
+- `COMPANY_STATUS.md` Update Log updated with project completion
+- Project marked as completed in COMPANY_STATUS.md Project Details table

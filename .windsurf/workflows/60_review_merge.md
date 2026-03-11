@@ -17,7 +17,7 @@ Review changes across product, architecture, security, reliability, QA, and oper
 - status: `state: review`, `owner: reviewer`
 - Tasks moved from REVIEW/ to DONE/ with approval
 - Task completion documented with review evidence
-- `FRAMEWORK_STATUS.md` Update Log updated with review completion
+- `COMPANY_STATUS.md` Update Log updated with review completion
 
 ## TASK MANAGEMENT STEPS
 1. **Review Tasks in REVIEW:**

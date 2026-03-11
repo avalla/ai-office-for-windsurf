@@ -20,7 +20,7 @@ trigger: when_referenced
 | "Import existing project" | `import-project` workflow |
 | "Add feature to..." | Feature development pipeline |
 | "Fix bug in..." | Bug fix pipeline |
-| "Generate report" | `investor-report` workflow |
+| "Generate report" | `office-investor-report` workflow |
 | "Develop feature" | `develop-feature` workflow |
 
 ## Secondary Triggers

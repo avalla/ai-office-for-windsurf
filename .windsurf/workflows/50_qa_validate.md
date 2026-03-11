@@ -20,7 +20,7 @@ Before completion, re-verify and improve the QA test plan through multi-sector r
 - status: `state: qa`, `owner: qa`
 - Tasks moved from WIP/ to REVIEW/ with QA validation
 - Task files updated with QA results
-- `FRAMEWORK_STATUS.md` Update Log updated with QA status
+- `COMPANY_STATUS.md` Update Log updated with QA status
 
 ## TASK MANAGEMENT STEPS
 1. **Security Check (Optional):**

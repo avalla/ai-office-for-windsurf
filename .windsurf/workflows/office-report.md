@@ -28,7 +28,7 @@ Generate comprehensive reports for agency operations: weekly summaries, client r
 
 ### 3. Investor Report
 **Audience:** External stakeholders
-**Content:** High-level progress, milestones, risks, roadmap (uses `/investor-report`)
+**Content:** High-level progress, milestones, risks, roadmap (uses `/office-investor-report`)
 
 ### 4. Technical Debt Report
 **Audience:** Internal technical
@@ -53,32 +53,32 @@ Generate comprehensive reports for agency operations: weekly summaries, client r
    - Read postmortems for learnings
 
 3. **Generate Report**
-   
+
    #### Weekly Summary Template
    ```markdown
    # Weekly Agency Summary
-   
+
    **Period:** YYYY-MM-DD to YYYY-MM-DD
-   
+
    ## Overview
    - **Projects Active:** N
    - **Tasks Completed:** N
    - **Tasks In Progress:** N
    - **Blockers Resolved:** N
-   
+
    ## Highlights
    - <key accomplishment 1>
    - <key accomplishment 2>
-   
+
    ## Project Updates
    ### <Project 1>
    - Status: <state>
    - Progress: <description>
    - Next: <upcoming work>
-   
+
    ## Blockers & Issues
    - <blocker 1>: <status/resolution>
-   
+
    ## Next Week Priorities
    1. <priority 1>
    2. <priority 2>
@@ -87,34 +87,34 @@ Generate comprehensive reports for agency operations: weekly summaries, client r
    #### Client Report Template
    ```markdown
    # Project Report: <Project Name>
-   
+
    **Client:** <client>
    **Period:** YYYY-MM-DD to YYYY-MM-DD
    **Report Date:** YYYY-MM-DD
-   
+
    ## Executive Summary
    <2-3 sentence overview>
-   
+
    ## Progress This Period
    - ✅ <completed item 1>
    - ✅ <completed item 2>
    - 🔄 <in progress item>
-   
+
    ## Upcoming Deliverables
    - <deliverable 1> - Expected: <date>
    - <deliverable 2> - Expected: <date>
-   
+
    ## Timeline Status
    - **Overall:** On Track / At Risk / Behind
    - **Notes:** <explanation if not on track>
-   
+
    ## Issues & Risks
    - <issue>: <mitigation>
-   
+
    ## Next Steps
    1. <next step 1>
    2. <next step 2>
-   
+
    ## Questions for Client
    - <question 1>
    ```
@@ -145,7 +145,7 @@ office/
 ## SCHEDULE
 - Weekly Summary: Every Monday (manual trigger)
 - Client Reports: Per agreement with client
-- Investor Report: Monthly/quarterly (via `/investor-report`)
+- Investor Report: Monthly/quarterly (via `/office-investor-report`)
 
 ---
 

@@ -17,7 +17,7 @@ Before completion, re-verify and improve the task document through multi-sector 
 - `review-document-multisector` executed on tasks and improvements applied
 - status `## Multi-sector document review log (mandatory)` updated for tasks
 - status: keep `state: tasks`, `owner: planner`
-- `FRAMEWORK_STATUS.md` Update Log updated with task breakdown
+- `COMPANY_STATUS.md` Update Log updated with task breakdown
 - next: `40_dev_implement`
 
 ## TASK FILE GENERATION

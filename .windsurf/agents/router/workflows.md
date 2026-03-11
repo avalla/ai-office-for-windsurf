@@ -37,7 +37,7 @@ trigger: when_referenced
 | `01_create_project` | New project request |
 | `import-project` | Existing project import |
 | `develop-feature` | Feature development |
-| `investor-report` | Status report generation |
+| `office-investor-report` | Status report generation |
 | Bug fix pipeline | Bug fix request |
 
 ### Receives From

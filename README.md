@@ -250,7 +250,11 @@ Each project under `projects/<project>/` has its own:
 - **Contributions**: Submit pull requests for improvements
 - **Feedback**: Help improve the framework
 
-## 📄 License
+## � Acknowledgments
+
+Special thanks to the **[get-shit-done](https://github.com/gsd-build/get-shit-done)** project for inspiring the metaframework approach and demonstrating the power of spec-driven development systems. Their work on context engineering and meta-prompting has been instrumental in shaping the AI Office methodology.
+
+## �📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
