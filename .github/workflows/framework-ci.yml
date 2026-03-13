@@ -12,32 +12,26 @@ jobs:
 
       - name: Required framework files exist
         run: |
-          test -d .windsurf/workflows
-          test -d .windsurf/rules
-          test -d .windsurf/templates
-          test -d projects/_skeleton
+          test -d .ai-office/workflows
+          test -d .ai-office/rules
+          test -d .ai-office/templates
 
       - name: Required workflows are not empty
         run: |
           files=(
-            ".windsurf/workflows/00_router.md"
-            ".windsurf/workflows/01_create_project.md"
-            ".windsurf/workflows/05_planner.md"
-            ".windsurf/workflows/10_ceo_prd.md"
-            ".windsurf/workflows/20_arch_adr.md"
-            ".windsurf/workflows/22_ux_research.md"
-            ".windsurf/workflows/25_design_ui.md"
-            ".windsurf/workflows/26_audio_create.md"
-            ".windsurf/workflows/27_video_create.md"
-            ".windsurf/workflows/28_game_create.md"
-            ".windsurf/workflows/29_image_create.md"
-            ".windsurf/workflows/30_plan_tasks.md"
-            ".windsurf/workflows/40_dev_implement.md"
-            ".windsurf/workflows/50_qa_validate.md"
-            ".windsurf/workflows/60_review_merge.md"
-            ".windsurf/workflows/70_release.md"
-            ".windsurf/workflows/90_postmortem_memory.md"
-            ".windsurf/workflows/develop-feature.md"
+            ".ai-office/workflows/pipeline.md"
+            ".ai-office/workflows/role-product.md"
+            ".ai-office/workflows/role-architect.md"
+            ".ai-office/workflows/role-planner.md"
+            ".ai-office/workflows/role-developer.md"
+            ".ai-office/workflows/role-qa.md"
+            ".ai-office/workflows/role-creative.md"
+            ".ai-office/workflows/role-security.md"
+            ".ai-office/workflows/role-ops.md"
+            ".ai-office/workflows/office-operations.md"
+            ".ai-office/workflows/create-project.md"
+            ".ai-office/workflows/develop-feature.md"
+            ".ai-office/workflows/import-project.md"
           )
           for f in "${files[@]}"; do
             test -s "$f" || (echo "Empty workflow: $f" && exit 1)
@@ -46,11 +40,11 @@ jobs:
       - name: Required templates are not empty
         run: |
           files=(
-            ".windsurf/templates/prd.md"
-            ".windsurf/templates/adr.md"
-            ".windsurf/templates/qa-checklist.md"
-            ".windsurf/templates/runbook-plan.md"
-            ".windsurf/templates/runbook-tasks.md"
+            ".ai-office/templates/prd.md"
+            ".ai-office/templates/adr.md"
+            ".ai-office/templates/qa-checklist.md"
+            ".ai-office/templates/runbook-plan.md"
+            ".ai-office/templates/runbook-tasks.md"
           )
           for f in "${files[@]}"; do
             test -s "$f" || (echo "Empty template: $f" && exit 1)
@@ -58,16 +52,16 @@ jobs:
 
       - name: Multi-sector review skill exists
         run: |
-          test -s ".windsurf/skills/review-document-multisector.md" || (echo "Missing skill: review-document-multisector" && exit 1)
+          test -s ".ai-office/skills/review-document-multisector.md" || (echo "Missing skill: review-document-multisector" && exit 1)
 
       - name: Templates include mandatory multi-sector review section
         run: |
           files=(
-            ".windsurf/templates/prd.md"
-            ".windsurf/templates/adr.md"
-            ".windsurf/templates/runbook-plan.md"
-            ".windsurf/templates/runbook-tasks.md"
-            ".windsurf/templates/qa-checklist.md"
+            ".ai-office/templates/prd.md"
+            ".ai-office/templates/adr.md"
+            ".ai-office/templates/runbook-plan.md"
+            ".ai-office/templates/runbook-tasks.md"
+            ".ai-office/templates/qa-checklist.md"
           )
           for f in "${files[@]}"; do
             grep -Fq "## Multi-sector review (mandatory)" "$f" || (echo "Missing multi-sector section in: $f" && exit 1)
@@ -76,24 +70,19 @@ jobs:
       - name: Workflows enforce multi-sector review gate
         run: |
           files=(
-            ".windsurf/workflows/00_router.md"
-            ".windsurf/workflows/01_create_project.md"
-            ".windsurf/workflows/05_planner.md"
-            ".windsurf/workflows/10_ceo_prd.md"
-            ".windsurf/workflows/20_arch_adr.md"
-            ".windsurf/workflows/22_ux_research.md"
-            ".windsurf/workflows/25_design_ui.md"
-            ".windsurf/workflows/26_audio_create.md"
-            ".windsurf/workflows/27_video_create.md"
-            ".windsurf/workflows/28_game_create.md"
-            ".windsurf/workflows/29_image_create.md"
-            ".windsurf/workflows/30_plan_tasks.md"
-            ".windsurf/workflows/40_dev_implement.md"
-            ".windsurf/workflows/50_qa_validate.md"
-            ".windsurf/workflows/60_review_merge.md"
-            ".windsurf/workflows/70_release.md"
-            ".windsurf/workflows/90_postmortem_memory.md"
-            ".windsurf/workflows/develop-feature.md"
+            ".ai-office/workflows/pipeline.md"
+            ".ai-office/workflows/role-product.md"
+            ".ai-office/workflows/role-architect.md"
+            ".ai-office/workflows/role-planner.md"
+            ".ai-office/workflows/role-developer.md"
+            ".ai-office/workflows/role-qa.md"
+            ".ai-office/workflows/role-creative.md"
+            ".ai-office/workflows/role-security.md"
+            ".ai-office/workflows/role-ops.md"
+            ".ai-office/workflows/office-operations.md"
+            ".ai-office/workflows/create-project.md"
+            ".ai-office/workflows/develop-feature.md"
+            ".ai-office/workflows/import-project.md"
           )
           for f in "${files[@]}"; do
             grep -Fq "review-document-multisector" "$f" || (echo "Missing review gate in workflow: $f" && exit 1)
@@ -101,32 +90,6 @@ jobs:
 
       - name: Skills are not empty
         run: |
-          for f in .windsurf/skills/*.md; do
+          for f in .ai-office/skills/*.md; do
             test -s "$f" || (echo "Empty skill: $f" && exit 1)
           done
-
-      - name: Project skeleton contains required dirs
-        run: |
-          test -d "projects/_skeleton/.ai-agency/docs/prd"
-          test -d "projects/_skeleton/.ai-agency/docs/adr"
-          test -d "projects/_skeleton/.ai-agency/docs/qa"
-          test -d "projects/_skeleton/.ai-agency/docs/runbooks"
-
-      - name: Multi-project status schema consistency
-        run: |
-          expected_state="state: router|create_project|prd|adr|plan|tasks|ux_research|design_ui|dev|audio_create|video_create|image_create|game_create|security|qa|review|release|postmortem|blocked"
-          expected_owner="owner: router|create_project|planner|ceo_pm|architect|ux_researcher|designer|dev|audio_creator|video_creator|image_creator|game_developer|security|qa|reviewer|release|ops"
-
-          grep -Fq 'Required keys in `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:' docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq 'Required keys in `projects/<project>/.ai-agency/docs/runbooks/<slug>-status.md`:' projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq "project: <project>" docs/runbooks/STATUS_TEMPLATE.md
-          grep -Fq "project: <project>" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_TEMPLATE.md
-          grep -Fq "## Multi-sector document review log (mandatory)" docs/runbooks/STATUS_TEMPLATE.md
-          grep -Fq "## Multi-sector document review log (mandatory)" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_TEMPLATE.md
-          grep -Fq 'Mandatory markdown section in every status artifact:' docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq 'Mandatory markdown section in every status artifact:' projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md
-
-          grep -Fq "$expected_state" docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq "$expected_state" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq "$expected_owner" docs/runbooks/STATUS_SCHEMA.md
-          grep -Fq "$expected_owner" projects/_skeleton/.ai-agency/docs/runbooks/STATUS_SCHEMA.md

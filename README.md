@@ -1,276 +1,169 @@
+# AI Office Framework
 
-# 🤖 AI Office for Windsurf
+🚀 **AI-driven multi-role collaboration framework for software projects**
 
-> A comprehensive **AI Software Company framework** designed specifically for Windsurf IDE, enabling systematic project development with multi-role workflows and enterprise-grade quality assurance.
+## 🎯 Quick Start
 
-![Framework Status](https://img.shields.io/badge/Status-Production%20Ready-green)
-![Version](https://img.shields.io/badge/Version-3.1-blue)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)
-![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)
+### Install via npm (recommended)
 
-## 🌟 Overview
+```bash
+# Install globally
+npm install -g @ai-office/mcp-adapter
 
-AI Office for Windsurf is a **modular framework** that transforms how software projects are developed by implementing a complete AI-driven software company workflow. It provides structured processes, quality gates, and documentation standards that ensure consistent, high-quality project delivery.
-
-### 🎯 Key Features
-
-- **🔄 Multi-Role Workflows**: CEO, Architect, Planner, Developer, QA, Reviewer, Release Manager, Ops
-- **🧠 Memory Layer**: Persistent learning and decision tracking
-- **📋 Quality Gates**: Multi-sector reviews for all artifacts
-- **🏗️ Architecture Mapping**: System-wide dependency and relationship tracking
-- **🔒 Security Helpers**: Supabase/SQL security patterns and best practices
-- **📊 Logging & Decisions**: Complete audit trail for all project decisions
-- **📚 Template System**: Standardized documentation and code templates
-- **🚀 Project Orchestration**: End-to-end workflow automation
-
-## 🏗️ Architecture
-
-### Framework Structure
-
-```
-ai-office-windsurf/
-├── 📁 .windsurf/                    # Framework core
-│   ├── 📁 workflows/               # Workflow definitions
-│   ├── 📁 skills/                  # Reusable AI skills
-│   ├── 📁 rules/                   # Framework rules and constraints
-│   ├── 📁 templates/               # Document and code templates
-│   └── 📄 office-config.md         # Agency configuration (agents, roles)
-├── 📁 office/                       # Agency operations
-│   ├── 📁 clients/                 # Client profiles
-│   ├── 📁 meetings/                # Virtual meeting archives
-│   └── 📁 reports/                 # Generated reports
-├── 📁 docs/                        # Framework documentation
-│   ├── 📁 architecture/            # System architecture docs
-│   ├── 📁 memory/                  # Learning and patterns
-│   ├── 📁 logs/                    # System logs
-│   └── 📁 runbooks/                # Operational guides
-├── 📁 projects/                    # Multi-project workspace
-│   ├── 📁 _skeleton/               # Project template
-│   └── 📁 <project-name>/          # Individual projects
-└── 📁 architecture/                # High-level architecture
+# Install in your project
+cd your-project
+ai-office install --ide windsurf   # or cursor, antigravity, vscode
 ```
 
-### Agency Configuration
+### Install via npx (no global install)
 
-The agency is configured in `.windsurf/office-config.md` with:
+```bash
+npx @ai-office/mcp-adapter install --ide windsurf
+```
 
-- **Agent Roster:** 21 specialized agents across orchestration, executive, design, creative, technical, quality, and operations layers
-- **Communication Protocols:** Inter-agent communication, meeting cadence
-- **Decision Authority Matrix:** Who decides what
-- **Operational Parameters:** Quality thresholds, iteration limits
-- **Client Interaction Model:** Engagement types and communication style
+### CLI Commands
 
-### Multi-Project Workspace
+```bash
+ai-office install   # Install framework in current project
+ai-office init      # Alias for install
+ai-office update    # Update framework files
+ai-office doctor    # Check installation health
+ai-office uninstall # Remove framework
+ai-office serve     # Start the MCP server (stdio)
+```
 
-Each project under `projects/<project>/` has its own:
+## 📋 What It Provides
 
-- **📁 docs/** - Project artifacts (PRD, ADR, plans, tasks)
-- **📁 architecture/** - Project-specific architecture
-- **📁 memory/** - Project learning and decisions
-- **📁 .ai-agency/** - AI Office integration
+- **🤖 21 AI Agents** - Specialized roles (CEO, Architect, Developer, QA, etc.)
+- **🏢 6 Agencies** - Pre-configured workflows (Software Studio, Creative Agency, etc.)
+- **🔧 MCP Integration** - 30 tools + Resources for Windsurf/Cursor/Antigravity/VS Code
+- **📋 Task Management** - Kanban board with automated workflows
+- **🎯 Pipeline Stages** - From PRD to Release with quality gates
+- **📚 Resources** - Framework artifacts accessible via MCP resources
 
-## 🚀 Getting Started
+## 🔧 MCP Setup
 
-### Prerequisites
+The `ai-office install` command auto-configures your IDE. You can also set it up manually:
 
-- **Windsurf IDE** installed and configured
-- **Cascade AI** enabled in Windsurf
-- Repository cloned and up to date
+**Windsurf** — `.windsurf/mcp_config.json`:
+```json
+{
+  "mcpServers": {
+    "ai-office": {
+      "command": "npx",
+      "args": ["-y", "@ai-office/mcp-adapter", "serve", "--stdio"]
+    }
+  }
+}
+```
 
-### Quick Start
+**Cursor** — `.cursor/mcp.json`:
+```json
+{
+  "mcpServers": {
+    "ai-office": {
+      "command": "npx",
+      "args": ["-y", "@ai-office/mcp-adapter", "serve", "--stdio"]
+    }
+  }
+}
+```
 
-1. **Create New Project**
-   ```bash
-   # Create project folder
-   mkdir projects/<project-name>
+**VS Code** — `.vscode/mcp.json`:
+```json
+{
+  "servers": {
+    "ai-office": {
+      "command": "npx",
+      "args": ["-y", "@ai-office/mcp-adapter", "serve", "--stdio"]
+    }
+  }
+}
+```
 
-   # Copy skeleton template
-   cp -r projects/_skeleton/* projects/<project-name>/
-   ```
+**Antigravity** — `.antigravity/mcp_config.json` (same as Windsurf format)
 
-2. **Start Workflow**
-   - Invoke workflow via slash command: `/00_router`
-   - The system will orchestrate the entire pipeline
+**⚠️ Important:**
+- The `--stdio` flag is **required** for IDE integration
+- Set `AI_OFFICE_PROJECT_ROOT` env var if you need to override the project root
+- Server uses current working directory as project root (supports multiple projects)
 
-3. **Follow the Pipeline**
-   - Each state requires multi-sector review before advancement
-   - All artifacts are automatically validated
-   - Progress is tracked in status files
+## 📁 Project Structure
 
-### Workflow States
+```
+your-project/
+├── .ai-office/           # Framework configuration
+│   ├── agencies/         # Available agencies
+│   ├── agents/           # AI agent profiles
+│   ├── tasks/            # Task board (BACKLOG, TODO, WIP, etc.)
+│   └── templates/        # Project templates
+├── .windsurf/           # IDE integration
+│   ├── workflows/       # AI workflows
+│   ├── skills/          # AI skills
+│   └── mcp_config.json  # MCP server configuration
+└── your-project-files/  # Your actual project
+```
 
-| State | Role | Purpose | Output |
-|-------|------|---------|--------|
-| **00_router** | Router | Project routing & initialization | Status file |
-| **01_create_project** | PM | Project setup & core artifacts | PRD, ADR, Plan |
-| **01_import_project** | PM | Import existing project into framework | Config, ADR |
-| **10_ceo_prd** | CEO | Product requirements | PRD |
-| **20_arch_adr** | Architect | Technical decisions | ADR |
-| **05_planner** | Planner | Macro planning | Plan |
-| **30_plan_tasks** | Planner | Task breakdown | Tasks |
-| **40_dev_implement** | Developer | Implementation | Code |
-| **45_security_pentest** | Security | Security assessment | Pentest report |
-| **50_qa_validate** | QA | Quality assurance | Test results |
-| **60_review_merge** | Reviewer | Code review | Approval |
-| **70_release** | Release | Release preparation | Changelog |
-| **90_postmortem_memory** | Ops | Learning & improvements | Postmortem |
+## 🤖 Available Tools
 
-### Agency Operations Workflows
+**Pipeline & Status:**
+- `ai_office_route` - Route requests to pipeline stages
+- `ai_office_get_status` - Get project/feature status
+- `ai_office_set_status` - Update status
+- `ai_office_list_status` - List all status files
+- `ai_office_advance` - Move to next pipeline stage
+- `ai_office_scaffold` - Generate stage artifacts
+- `ai_office_validate` - Validate quality gates
+- `ai_office_pipeline_info` - Get pipeline stages and transitions
 
-| Workflow | Purpose | Trigger |
-|----------|---------|---------|
-| **office-client-onboard** | Onboard new clients, establish communication | `/office-client-onboard` |
-| **office-project-status** | Consolidated view of all projects | `/office-project-status` |
-| **office-agent-meeting** | Virtual meetings between agents | `/office-agent-meeting` |
-| **office-report** | Generate agency reports | `/office-report` |
+**Task Management:**
+- `ai_office_task_create` - Create new tasks
+- `ai_office_task_move` - Move tasks between columns
+- `ai_office_task_list` - List tasks by column
+- `ai_office_task_count` - Count tasks per column
+- `ai_office_move_task` - Move task with dependency check
+- `ai_office_update_task` - Update task properties
+- `ai_office_validate_dependencies` - Validate task/milestone dependencies
 
-## 📚 Documentation
+**Agency & Team:**
+- `ai_office_list_agencies` - List available agencies
+- `ai_office_get_agency` - Get agency details
+- `ai_office_select_agency` - Select agency for project
+- `ai_office_compose_team` - Manage team composition
 
-### 🎯 Primary Documents (Start Here)
+**Framework:**
+- `ai_office_install` - Install framework in project
+- `ai_office_update` - Update framework
+- `ai_office_uninstall` - Remove framework
+- `ai_office_doctor` - Check installation health
+- `ai_office_generate_repo_graph` - Repository dependency graph
+- `ai_office_review` - Multi-sector document review
+- `ai_office_report` - Generate project reports
 
-| Document | Purpose | Location |
-|----------|---------|----------|
-| **Framework Map** | System contracts & relationships | `docs/repo-graph.md` |
-| **Architecture Overview** | System design & components | `architecture/system-overview.md` |
-| **Quick Start Guide** | New project onboarding | `docs/runbooks/start-new-project-quickstart.md` |
+## 📚 Available Resources
 
-### 📖 Secondary Documents
+- `ai-office://pipeline` - Framework pipeline configuration
+- `ai-office://team` - Team roles and agents
+- `ai-office://status/{slug}` - Project/feature status files
+- `ai-office://tasks/{column}` - Task board by column
+- `ai-office://agencies/{name}` - Agency configurations
+- `ai-office://docs/{doc}` - Framework documentation
 
-| Document | Purpose | Location |
-|----------|---------|----------|
-| **Operational Checklist** | Step-by-step guidance | `docs/runbooks/start-new-project-operational-checklist.md` |
-| **Beta Roadmap** | Development timeline | `docs/beta-operational-roadmap.md` |
-| **Risk Assessment** | Known risks & mitigations | `docs/beta-residual-risks.md` |
-| **Decision History** | Framework evolution | `docs/decision-log.md` |
+*Resources are automatically discovered and accessible via your IDE's resource browser*
 
-## 🎯 Demo Projects
+## 🏢 Available Agencies
 
-### 🌐 ai-office-demo
-- **Status**: ✅ Complete (full cycle executed)
-- **Location**: `projects/ai-office-demo/`
-- **Technology**: Vite + React + TypeScript + Tailwind CSS
-- **Purpose**: Demo website showcasing AI Office capabilities
+1. **Software Studio** - Full-stack web/mobile apps
+2. **Creative Agency** - Media & content production
+3. **Game Studio** - Game development
+4. **Lean Startup** - Rapid MVP development
+5. **Penetration Test Agency** - Security testing
+6. **Media Agency** - Video/movie production
 
-## 🔧 Core Components
+## 🚀 Version
 
-### 🔄 Workflow System
-- **State Machine**: Ensures proper progression through development stages
-- **Quality Gates**: Multi-sector reviews prevent weak handoffs
-- **Artifact Tracking**: Complete audit trail of all project decisions
-- **Loop Guards**: Automatic iteration handling for failed states
-
-### 🧠 Memory Layer
-- **Decision Logging**: All decisions tracked with rationale
-- **Pattern Recognition**: Reusable patterns across projects
-- **Learning Loop**: Continuous improvement through postmortems
-- **Knowledge Base**: Persistent storage of best practices
-
-### 🛡️ Quality Assurance
-- **Multi-Sector Reviews**: Product, Architecture, Security, Reliability, QA, Operations
-- **Automated Validation**: Built-in checks for all artifacts
-- **Template Enforcement**: Consistent documentation standards
-- **Audit Trail**: Complete history of all changes and reviews
-
-## 📊 Framework Benefits
-
-### 🎯 Business Benefits
-- **Consistent Quality**: Enterprise-grade standards across all projects
-- **Predictable Delivery**: Reliable timelines and outcomes
-- **Risk Mitigation**: Systematic identification and handling of risks
-- **Scalable Process**: Works for projects of any size
-
-### 👥 Team Benefits
-- **Clear Roles**: Defined responsibilities for each workflow state
-- **Reduced Context Switching**: Focused work within defined stages
-- **Knowledge Sharing**: Persistent memory and decision tracking
-- **Continuous Learning**: Postmortem-driven improvements
-
-### 🔧 Technical Benefits
-- **Standardized Architecture**: Consistent patterns across projects
-- **Security by Design**: Built-in security considerations
-- **Performance Focus**: Systematic performance optimization
-- **Maintainable Code**: Quality gates and review processes
-
-## 🔒 Security & Compliance
-
-### 🛡️ Security Features
-- **Security Reviews**: Dedicated security assessment workflow (`45_security_pentest`)
-- **Penetration Testing**: Comprehensive security testing and vulnerability assessment
-- **OWASP Compliance**: Testing against OWASP Top 10 security risks
-- **Dependency Scanning**: Automated vulnerability detection with Snyk
-- **Security Reporting**: Detailed vulnerability reports with remediation guidance
-- **Supabase Helpers**: SQL security patterns and RLS policies
-- **Secure Templates**: Security-conscious code and documentation templates
-
-### 📋 Compliance
-- **Audit Ready**: Complete documentation and decision trails
-- **Quality Standards**: Enterprise-grade development practices
-- **Regulatory Support**: Framework adaptable to compliance requirements
-- **Documentation**: Comprehensive records for audit purposes
-
-## 🚀 Advanced Features
-
-### 🔄 Workflow Orchestration
-- **Automatic State Transitions**: System-managed workflow progression
-- **Error Handling**: Graceful failure recovery and iteration
-- **Parallel Processing**: Multiple projects can run simultaneously
-- **Resource Management**: Efficient allocation of AI resources
-
-### 📊 Analytics & Reporting
-- **Project Metrics**: Track progress, quality, and performance
-- **Decision Analytics**: Analyze patterns and improve processes
-- **Quality Metrics**: Monitor code quality and testing coverage
-- **Performance Tracking**: Measure development velocity and efficiency
-
-## 🤝 Contributing
-
-### 🏗️ Framework Development
-- **Workflow Enhancement**: Add new workflow states or modify existing ones
-- **Template Improvements**: Enhance documentation and code templates
-- **Skill Development**: Create new reusable AI skills
-- **Rule Updates**: Refine framework rules and constraints
-
-### 📝 Documentation
-- **Guide Updates**: Keep documentation current with framework changes
-- **Examples**: Add real-world usage examples
-- **Best Practices**: Document proven approaches and patterns
-- **Troubleshooting**: Help users resolve common issues
-
-## 📞 Support & Community
-
-### 🆘 Getting Help
-- **Documentation**: Start with primary documents listed above
-- **Quick Start**: Follow the new project onboarding guide
-- **Examples**: Review demo projects for implementation patterns
-- **Templates**: Use skeleton project as starting point
-
-### 💬 Community
-- **Discussions**: Share experiences and best practices
-- **Issues**: Report bugs and request features
-- **Contributions**: Submit pull requests for improvements
-- **Feedback**: Help improve the framework
-
-## � Acknowledgments
-
-Special thanks to the **[get-shit-done](https://github.com/gsd-build/get-shit-done)** project for inspiring the metaframework approach and demonstrating the power of spec-driven development systems. Their work on context engineering and meta-prompting has been instrumental in shaping the AI Office methodology.
-
-## �📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+**v5.0.0** - MCP-only architecture with Bun runtime
 
 ---
 
-<div align="center">
-
-**🤖 Built by the AI Office Team**
-
-![AI Office](https://img.shields.io/badge/AI%20Office-Powered%20by%20AI-blue)
-![Windsurf](https://img.shields.io/badge/Windsurf-IDE%20Integration-purple)
-
-**Transforming software development with AI-driven workflows**
-
-</div>
-
----
-
-*Generated: 2026-03-07 | Framework Version: 3.1 | Last Updated: 2026-03-07*
+*AI Office - Where AI agents collaborate to build great software*

@@ -5,6 +5,7 @@ node_modules/
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+bun.lock
 
 # env
 .env
@@ -30,4 +31,23 @@ logs/*
 .netlify
 logs/
 
+# Generated/Operational content (exclude)
+office/clients/
+office/meetings/
+office/reports/
+
+# Auto-generated reports
 COMPANY_STATUS.md
+
+# Legacy framework structure (deprecated)
+projects/
+.windsurf/
+
+# Framework installation (user projects)
+.ai-office/
+
+# Old .ai-agency structure (deprecated in projects)
+# Note: framework/ is the NEW framework location and should be versioned
+
+# AI Office Framework
+.ai-agency/memory/
