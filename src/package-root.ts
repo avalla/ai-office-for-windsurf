@@ -14,7 +14,7 @@ import { existsSync, readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
-/* eslint-disable no-undef */
+
 
 const PACKAGE_NAME = '@ai-office/mcp-adapter';
 

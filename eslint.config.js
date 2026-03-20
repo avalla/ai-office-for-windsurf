@@ -31,18 +31,19 @@ export default [
     },
     rules: {
       // TypeScript specific rules
-      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-non-null-assertion': 'warn',
-      
+
       // General JavaScript/TypeScript rules
       'no-console': 'warn',
       'no-debugger': 'error',
       'prefer-const': 'error',
       'no-var': 'error',
-      
+
       // Code style
       'indent': ['error', 2, { SwitchCase: 1 }],
       'quotes': ['error', 'single', { avoidEscape: true }],
@@ -76,7 +77,7 @@ export default [
       'no-debugger': 'error',
       'prefer-const': 'error',
       'no-var': 'error',
-      
+
       // Code style
       'indent': ['error', 2, { SwitchCase: 1 }],
       'quotes': ['error', 'single', { avoidEscape: true }],

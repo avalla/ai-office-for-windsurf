@@ -7,7 +7,7 @@
  * Copies framework files and generates MCP configuration for the specified IDE.
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, cpSync } from 'fs';
+import { writeFileSync, existsSync, mkdirSync, cpSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -238,10 +238,10 @@ function main() {
   console.log(`  Content:\n${JSON.stringify(config, null, 2)}`);
 
   console.log('\n✅ Installation completed successfully!');
-  console.log(`\n🚀 Next steps:`);
+  console.log('\n🚀 Next steps:');
   console.log(`  1. Navigate to your project: cd ${resolvedTarget}`);
-  console.log(`  2. Start your IDE and ensure MCP is configured`);
-  console.log(`  3. The AI Office MCP server will be available in your IDE`);
+  console.log('  2. Start your IDE and ensure MCP is configured');
+  console.log('  3. The AI Office MCP server will be available in your IDE');
 }
 
 // Run the installer

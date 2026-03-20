@@ -498,7 +498,6 @@ export async function reportHandler(args: unknown) {
   const tasksDir = getTasksDir();
 
   let reportContent: string;
-  let mimeType: string;
 
   if (type === 'status') {
     const statuses: { slug: string; state: string; updated: string }[] = [];
@@ -520,10 +519,8 @@ export async function reportHandler(args: unknown) {
 
     if (format === 'json') {
       reportContent = JSON.stringify({ generated: new Date().toISOString(), statuses }, null, 2);
-      mimeType = 'application/json';
     } else {
       reportContent = `# Status Report\n\nGenerated: ${new Date().toISOString()}\n\n| Slug | State | Updated |\n|------|-------|----------|\n${statuses.map(s => `| ${s.slug} | ${s.state} | ${s.updated} |`).join('\n')}\n`;
-      mimeType = 'text/markdown';
     }
   } else if (type === 'tech_debt') {
     const techDebt: { area: string; severity: string; description: string }[] = [];
@@ -552,10 +549,8 @@ export async function reportHandler(args: unknown) {
 
     if (format === 'json') {
       reportContent = JSON.stringify({ generated: new Date().toISOString(), techDebt }, null, 2);
-      mimeType = 'application/json';
     } else {
       reportContent = `# Tech Debt Report\n\nGenerated: ${new Date().toISOString()}\n\n| Area | Severity | Description |\n|------|----------|-------------|\n${techDebt.map(d => `| ${d.area} | ${d.severity} | ${d.description} |`).join('\n')}\n`;
-      mimeType = 'text/markdown';
     }
   } else {
     // Generic report for investor/audit
