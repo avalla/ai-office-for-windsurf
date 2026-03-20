@@ -9,30 +9,6 @@ interface FrameworkConfig {
   projectPath: string;
 }
 
-interface Milestone {
-  number: number;
-  name: string;
-  dependencies: number[];
-  status: 'BACKLOG' | 'TODO' | 'WIP' | 'REVIEW' | 'DONE';
-}
-
-interface Task {
-  id: string;
-  milestone: number;
-  taskNumber: number;
-  priority: 'H' | 'M' | 'L';
-  title: string;
-  status: 'BACKLOG' | 'TODO' | 'WIP' | 'REVIEW' | 'DONE';
-  description: string;
-  dependencies: string[];
-}
-
-interface ValidationResult {
-  valid: boolean;
-  errors: string[];
-  warnings: string[];
-}
-
 class RepositoryGraphGenerator {
   private config: FrameworkConfig;
 
@@ -82,7 +58,7 @@ class RepositoryGraphGenerator {
     return content;
   }
 
-  private async analyzeRepository(rootPath: string, includeDependencies: boolean) {
+  private async analyzeRepository(rootPath: string, _includeDependencies: boolean) {
     const files = await glob('**/*.{js,ts,jsx,tsx,py,java,go,rs}', {
       cwd: rootPath,
       ignore: ['node_modules/**', '.git/**', 'dist/**', 'build/**']

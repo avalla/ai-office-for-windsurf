@@ -17,7 +17,7 @@ type SupportedIDE = 'windsurf' | 'cursor' | 'antigravity' | 'vscode';
 const IDE_CONFIGS: Record<SupportedIDE, {
   dirName: string;
   configFile: string;
-  formatConfig: (mcpCmd: { command: string; args: string[] }) => object;
+  formatConfig: (_mcpCmd: { command: string; args: string[] }) => object;
 }> = {
   windsurf: {
     dirName: '.windsurf',

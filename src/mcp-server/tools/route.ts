@@ -1,6 +1,6 @@
 /**
  * Route Tool Handler
- * 
+ *
  * Routes requests to appropriate pipeline stages.
  */
 
@@ -12,14 +12,14 @@ const RouteSchema = z.object({
 });
 
 export async function routeHandler(args: unknown) {
-  const { request, context } = RouteSchema.parse(args);
-  
+  const { request } = RouteSchema.parse(args);
+
   // Simple routing logic
   let stage: string;
   let confidence: number;
-  
+
   const requestLower = request.toLowerCase();
-  
+
   if (requestLower.includes('new project') || requestLower.includes('create project')) {
     stage = 'create_project';
     confidence = 0.9;
@@ -36,7 +36,7 @@ export async function routeHandler(args: unknown) {
     stage = 'router';
     confidence = 0.5;
   }
-  
+
   return {
     content: [{
       type: 'text',

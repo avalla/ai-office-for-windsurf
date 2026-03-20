@@ -295,7 +295,7 @@ class ScriptManager {
   }
 }
 
-export async function listScriptsHandler(args: unknown): Promise<any> {
+export async function listScriptsHandler(_args: unknown): Promise<any> {
   const manager = new ScriptManager(ProjectRoot);
 
   const scripts = manager.listScripts();

@@ -18,7 +18,6 @@ import {
   ListResourceTemplatesRequestSchema,
   McpError
 } from '@modelcontextprotocol/sdk/types.js';
-import { z } from 'zod';
 import { VERSION } from '../version.js';
 
 // Import tool handlers

@@ -9,12 +9,6 @@ interface FrameworkConfig {
   projectPath: string;
 }
 
-interface Agency {
-  name: string;
-  description: string;
-  configPath: string;
-}
-
 class AgencyManager {
   private config: FrameworkConfig;
 
@@ -131,7 +125,7 @@ class AgencyManager {
   }
 }
 
-export async function listAgenciesHandler(args: any): Promise<any> {
+export async function listAgenciesHandler(_args: unknown): Promise<any> {
   const projectRoot = process.env.AI_OFFICE_PROJECT_ROOT || process.cwd();
   const manager = new AgencyManager(projectRoot);
 
