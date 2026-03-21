@@ -4,7 +4,16 @@
  * AI Office Local Installer
  *
  * Run from AI Office main folder to install framework into a target project.
- * Copies framework files and generates MCP configuration for the specified IDE.
+ * Primary target: Claude Code. Legacy MCP targets also supported.
+ *
+ * Usage: node install-local.js <target-directory> [target]
+ *
+ * Targets:
+ *   claude-code   Install for Claude Code (default) — copies CLAUDE.md + framework files
+ *   windsurf      Install for Windsurf (MCP config)
+ *   cursor        Install for Cursor (MCP config)
+ *   vscode        Install for VS Code (MCP config)
+ *   antigravity   Install for Antigravity (MCP config)
  */
 
 import { writeFileSync, existsSync, mkdirSync, cpSync } from 'fs';
@@ -14,12 +23,44 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Get AI Office root (where this script is located)
 const aiOfficeRoot = __dirname;
 
-// Framework structure to copy
-const frameworkStructure = {
-  'framework/': '.ai-office/framework/',
+const TARGETS = {
+  'claude-code': {
+    displayName: 'Claude Code',
+    type: 'claude-code'
+  },
+  windsurf: {
+    displayName: 'Windsurf',
+    type: 'mcp',
+    dir: '.windsurf',
+    file: 'mcp_config.json',
+    key: 'mcpServers'
+  },
+  cursor: {
+    displayName: 'Cursor',
+    type: 'mcp',
+    dir: '.cursor',
+    file: 'mcp.json',
+    key: 'mcpServers'
+  },
+  vscode: {
+    displayName: 'VS Code',
+    type: 'mcp',
+    dir: '.vscode',
+    file: 'mcp.json',
+    key: 'servers'
+  },
+  antigravity: {
+    displayName: 'Antigravity',
+    type: 'mcp',
+    dir: '.antigravity',
+    file: 'mcp_config.json',
+    key: 'mcpServers'
+  }
+};
+
+const FRAMEWORK_FILES = {
   'framework/core/agencies/': '.ai-office/agencies/',
   'framework/core/agents/': '.ai-office/agents/',
   'framework/core/templates/': '.ai-office/templates/',
@@ -32,136 +73,113 @@ const frameworkStructure = {
   'CHANGELOG.md': '.ai-office/CHANGELOG.md'
 };
 
-// IDE configurations
-const ideConfigs = {
-  windsurf: {
-    dir: '.windsurf',
-    file: 'mcp_config.json',
-    key: 'mcpServers',
-    displayName: 'Windsurf'
-  },
-  cursor: {
-    dir: '.cursor',
-    file: 'mcp.json',
-    key: 'mcpServers',
-    displayName: 'Cursor'
-  },
-  vscode: {
-    dir: '.vscode',
-    file: 'mcp.json',
-    key: 'servers',
-    displayName: 'VS Code'
-  },
-  antigravity: {
-    dir: '.antigravity',
-    file: 'mcp_config.json',
-    key: 'mcpServers',
-    displayName: 'Antigravity'
-  }
-};
+const AI_OFFICE_DIRS = [
+  'docs/prd', 'docs/adr', 'docs/qa', 'docs/runbooks',
+  'memory',
+  'tasks/BACKLOG', 'tasks/TODO', 'tasks/WIP',
+  'tasks/REVIEW', 'tasks/DONE'
+];
 
 function printUsage() {
+  const targetList = Object.entries(TARGETS)
+    .map(([k, v]) => `  ${k.padEnd(14)} ${v.displayName}${k === 'claude-code' ? ' (default)' : ''}`)
+    .join('\n');
+
   console.log(`
 ━━━ AI Office Local Installer ━━━
 
-Usage: node install-local.js <target-directory> [ide]
+Usage: node install-local.js <target-directory> [target]
 
-Arguments:
-  target-directory    Path where AI Office should be installed
-  ide                 IDE type (windsurf, cursor, vscode, antigravity)
+Targets:
+${targetList}
 
 Examples:
-  node install-local.js ../my-project windsurf
-  node install-local.js ~/projects/my-app cursor
-  node install-local.js ./test-project vscode
+  node install-local.js ../my-project
+  node install-local.js ../my-project claude-code
+  node install-local.js ../my-project cursor
 `);
 }
 
-function promptForIDE() {
-  console.log('\nSelect IDE:');
-  const ides = Object.keys(ideConfigs);
-  ides.forEach((ide, index) => {
-    console.log(`  ${index + 1}. ${ideConfigs[ide].displayName} (${ide})`);
-  });
-  console.log('\nEnter IDE number or name:');
+function resolveTarget(rawPath) {
+  if (rawPath.startsWith('~')) {
+    return rawPath.replace('~', process.env.HOME);
+  }
+  if (rawPath.startsWith('/')) {
+    return rawPath;
+  }
+  return join(process.cwd(), rawPath);
 }
 
-function createMCPConfig(targetDir, ide) {
-  const config = ideConfigs[ide];
+function ensureDirs(targetDir) {
+  AI_OFFICE_DIRS.forEach(dir => {
+    mkdirSync(join(targetDir, '.ai-office', dir), { recursive: true });
+  });
+}
+
+function copyFrameworkFiles(targetDir) {
+  console.log('\n  Copying framework files...');
+  for (const [src, dst] of Object.entries(FRAMEWORK_FILES)) {
+    const srcPath = join(aiOfficeRoot, src);
+    const dstPath = join(targetDir, dst);
+    if (!existsSync(srcPath)) {
+      console.log(`  ! Source not found: ${src}`);
+      continue;
+    }
+    mkdirSync(dirname(dstPath), { recursive: true });
+    cpSync(srcPath, dstPath, { recursive: true });
+    console.log(`  + ${src} → ${dst}`);
+  }
+}
+
+function installClaudeCode(targetDir) {
+  // Copy framework/CLAUDE.md → CLAUDE.md (the file Claude Code reads)
+  const claudeMdSrc = join(aiOfficeRoot, 'framework', 'CLAUDE.md');
+  const claudeMdDst = join(targetDir, 'CLAUDE.md');
+
+  if (!existsSync(claudeMdSrc)) {
+    console.error('  ! framework/CLAUDE.md not found');
+    process.exit(1);
+  }
+
+  const alreadyExists = existsSync(claudeMdDst);
+  cpSync(claudeMdSrc, claudeMdDst);
+  console.log(`  + framework/CLAUDE.md → CLAUDE.md${alreadyExists ? ' (updated)' : ''}`);
+
+  ensureDirs(targetDir);
+  copyFrameworkFiles(targetDir);
+
+  console.log('\n  Next steps:');
+  console.log(`  1. Open Claude Code in: ${targetDir}`);
+  console.log('  2. Tell Claude: "pick up the current WIP task" or describe what you want to build');
+}
+
+function installMcp(targetDir, target) {
+  const distPath = join(aiOfficeRoot, 'dist', 'src', 'mcp-server', 'index.js');
+  if (!existsSync(distPath)) {
+    console.error('  ! AI Office is not built. Run "bun run build" first.');
+    process.exit(1);
+  }
+
+  ensureDirs(targetDir);
+  copyFrameworkFiles(targetDir);
+
   const mcpConfig = {
-    [config.key]: {
+    [target.key]: {
       'ai-office': {
         command: 'node',
-        args: [join(aiOfficeRoot, 'dist', 'src', 'mcp-server', 'index.js'), '--stdio']
+        args: [distPath, '--stdio']
       }
     }
   };
 
-  const configPath = join(targetDir, config.dir, config.file);
-  return { configPath, config: mcpConfig };
-}
+  const configPath = join(targetDir, target.dir, target.file);
+  mkdirSync(dirname(configPath), { recursive: true });
+  writeFileSync(configPath, JSON.stringify(mcpConfig, null, 2));
+  console.log(`  + MCP config → ${target.dir}/${target.file}`);
 
-function createDirectoryStructure(targetDir) {
-  // Create .ai-office directories
-  const aiOfficeDir = join(targetDir, '.ai-office');
-  const dirs = [
-    'docs', 'memory', 'versions', 'config', 'policies',
-    'tasks/BACKLOG', 'tasks/TODO', 'tasks/WIP',
-    'tasks/REVIEW', 'tasks/REJECTED', 'tasks/DONE', 'tasks/ARCHIVED'
-  ];
-
-  dirs.forEach(dir => {
-    const fullPath = join(aiOfficeDir, dir);
-    mkdirSync(fullPath, { recursive: true });
-  });
-
-  // Create IDE directory
-  const ideDir = join(targetDir, '.windsurf'); // Default, will be renamed based on IDE
-  mkdirSync(ideDir, { recursive: true });
-
-  // Create tasks README
-  const tasksReadme = `# Task Board
-
-| State | Count |
-|-------|-------|
-| BACKLOG | 0 |
-| TODO | 0 |
-| WIP | 0 |
-| REVIEW | 0 |
-| REJECTED | 0 |
-| DONE | 0 |
-| ARCHIVED | 0 |
-
-Updated: ${new Date().toISOString().split('T')[0]}
-`;
-  writeFileSync(join(aiOfficeDir, 'tasks', 'README.md'), tasksReadme);
-}
-
-function copyFrameworkFiles(targetDir) {
-  console.log('\n📁 Copying framework files...');
-
-  Object.entries(frameworkStructure).forEach(([src, dst]) => {
-    const srcPath = join(aiOfficeRoot, src);
-    const dstPath = join(targetDir, dst);
-
-    if (existsSync(srcPath)) {
-      // Ensure destination directory exists
-      mkdirSync(dirname(dstPath), { recursive: true });
-
-      if (src.endsWith('/')) {
-        // Copy directory
-        cpSync(srcPath, dstPath, { recursive: true });
-        console.log(`  ✓ Copied ${src} → ${dst}`);
-      } else {
-        // Copy file
-        mkdirSync(dirname(dstPath), { recursive: true });
-        cpSync(srcPath, dstPath);
-        console.log(`  ✓ Copied ${src} → ${dst}`);
-      }
-    } else {
-      console.log(`  ⚠ Source not found: ${src}`);
-    }
-  });
+  console.log('\n  Next steps:');
+  console.log(`  1. Open ${target.displayName} in: ${targetDir}`);
+  console.log('  2. Ensure MCP is enabled — the ai-office server will be available');
 }
 
 function main() {
@@ -172,77 +190,36 @@ function main() {
     process.exit(0);
   }
 
-  const targetDir = args[0];
-  let ide = args[1];
+  const rawPath = args[0];
+  const targetKey = args[1] || 'claude-code';
 
-  // Validate target directory
-  if (!targetDir) {
-    console.error('❌ Target directory is required');
-    printUsage();
+  if (!TARGETS[targetKey]) {
+    console.error(`  ! Unknown target: ${targetKey}`);
+    console.error(`  Supported: ${Object.keys(TARGETS).join(', ')}`);
     process.exit(1);
   }
 
-  // Resolve target directory (handle ~ and relative paths)
-  const resolvedTarget = targetDir.startsWith('~')
-    ? targetDir.replace('~', process.env.HOME)
-    : join(process.cwd(), targetDir);
+  const targetDir = resolveTarget(rawPath);
 
-  // Get IDE selection
-  if (!ide) {
-    promptForIDE();
-    // For now, default to windsurf
-    ide = 'windsurf';
-  }
-
-  if (!ideConfigs[ide]) {
-    console.error(`❌ Unsupported IDE: ${ide}`);
-    console.error(`Supported IDEs: ${Object.keys(ideConfigs).join(', ')}`);
+  if (!existsSync(targetDir)) {
+    console.error(`  ! Directory not found: ${targetDir}`);
     process.exit(1);
   }
 
-  // Check if AI Office is built
-  const distPath = join(aiOfficeRoot, 'dist', 'src', 'mcp-server', 'index.js');
-  if (!existsSync(distPath)) {
-    console.error('❌ AI Office is not built. Run "npm run build" first.');
-    process.exit(1);
+  const target = TARGETS[targetKey];
+
+  console.log('\n━━━ AI Office Installer ━━━');
+  console.log(`\n  Target : ${targetDir}`);
+  console.log(`  Mode   : ${target.displayName}`);
+  console.log(`  Source : ${aiOfficeRoot}`);
+
+  if (target.type === 'claude-code') {
+    installClaudeCode(targetDir);
+  } else {
+    installMcp(targetDir, target);
   }
 
-  console.log('\n━━━ AI Office Local Installer ━━━');
-  console.log(`\n📂 Target directory: ${resolvedTarget}`);
-  console.log(`🎨 IDE: ${ideConfigs[ide].displayName}`);
-  console.log(`📦 AI Office source: ${aiOfficeRoot}`);
-
-  // Create directory structure
-  createDirectoryStructure(resolvedTarget);
-
-  // Copy framework files
-  copyFrameworkFiles(resolvedTarget);
-
-  // Generate MCP configuration
-  const { configPath, config } = createMCPConfig(resolvedTarget, ide);
-
-  // Create IDE directory if it doesn't exist
-  const ideDir = dirname(configPath);
-  mkdirSync(ideDir, { recursive: true });
-
-  // Write MCP config
-  writeFileSync(configPath, JSON.stringify(config, null, 2));
-
-  console.log('\n🔧 MCP Configuration:');
-  console.log(`  IDE: ${ideConfigs[ide].displayName}`);
-  console.log(`  Config file: ${configPath}`);
-  console.log(`  Command: node ${join(aiOfficeRoot, 'dist/src/mcp-server/index.js')} --stdio`);
-
-  console.log('\n📋 Add this to your IDE:');
-  console.log(`  File: ${configPath}`);
-  console.log(`  Content:\n${JSON.stringify(config, null, 2)}`);
-
-  console.log('\n✅ Installation completed successfully!');
-  console.log('\n🚀 Next steps:');
-  console.log(`  1. Navigate to your project: cd ${resolvedTarget}`);
-  console.log('  2. Start your IDE and ensure MCP is configured');
-  console.log('  3. The AI Office MCP server will be available in your IDE');
+  console.log('\n  Done.\n');
 }
 
-// Run the installer
 main();
