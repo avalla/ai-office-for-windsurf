@@ -30,6 +30,7 @@ If `$ARGUMENTS` is non-empty, parse the **first word** as a subcommand and the r
 | `script` | `office-script` | `/office script run deploy` |
 | `role` | `office-role` | `/office role developer` |
 | `meta` | `office-meta` | `/office meta` |
+| `company` | `office-company` | `/office company` |
 
 When a subcommand is matched: execute its logic exactly as defined in the corresponding `office-<subcommand>` command, treating the remaining arguments as `$ARGUMENTS` for that command.
 
