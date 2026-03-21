@@ -145,12 +145,23 @@ function installClaudeCode(targetDir) {
   cpSync(claudeMdSrc, claudeMdDst);
   console.log(`  + framework/CLAUDE.md → CLAUDE.md${alreadyExists ? ' (updated)' : ''}`);
 
+  // Copy .claude/commands/ → <target>/.claude/commands/
+  const commandsSrc = join(aiOfficeRoot, '.claude', 'commands');
+  const commandsDst = join(targetDir, '.claude', 'commands');
+  if (existsSync(commandsSrc)) {
+    mkdirSync(commandsDst, { recursive: true });
+    cpSync(commandsSrc, commandsDst, { recursive: true });
+    console.log('  + .claude/commands/ → .claude/commands/');
+  } else {
+    console.log('  ! .claude/commands/ not found — skipping slash commands');
+  }
+
   ensureDirs(targetDir);
   copyFrameworkFiles(targetDir);
 
   console.log('\n  Next steps:');
   console.log(`  1. Open Claude Code in: ${targetDir}`);
-  console.log('  2. Tell Claude: "pick up the current WIP task" or describe what you want to build');
+  console.log('  2. Run /office to get started');
 }
 
 function installMcp(targetDir, target) {
